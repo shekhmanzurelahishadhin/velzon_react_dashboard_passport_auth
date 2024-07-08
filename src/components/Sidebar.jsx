@@ -96,7 +96,7 @@ export default function Sidebar() {
                                             <NavLink to="dashboard-crm.html" className="nav-link" data-key="t-crm"> CRM </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to="#" className="nav-link" data-key="t-ecommerce"> Ecommerce </NavLink>
+                                            <NavLink to="#" className="nav-link" data-key="t-ecommerce"> Ecommerce</NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <NavLink to="dashboard-crypto.html" className="nav-link" data-key="t-crypto"> Crypto </NavLink>
