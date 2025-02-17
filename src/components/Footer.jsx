@@ -13,7 +13,7 @@ export default function Footer() {
                         </div>
                         <div className="col-sm-6">
                             <div className="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                                Design & Develop by Themesbrand 
                             </div>
                         </div>
                     </div>
