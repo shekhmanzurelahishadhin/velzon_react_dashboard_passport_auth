@@ -121,7 +121,6 @@ export default function Sidebar() {
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
                                             <NavLink to="apps-chat.html" className="nav-link" data-key="t-chat"> Chat </NavLink>
-                                            
                                         </li>
                                         <li className="nav-item">
                                             <a href="#sidebarEmail" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
