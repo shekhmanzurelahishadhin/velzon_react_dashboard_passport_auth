@@ -125,6 +125,7 @@ export default function Sidebar() {
                                         <li className="nav-item">
                                             <a href="#sidebarEmail" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
                                                 Email
+                                                
                                             </a>
                                             <div className="collapse menu-dropdown" id="sidebarEmail">
                                                 <ul className="nav nav-sm flex-column">
@@ -134,7 +135,7 @@ export default function Sidebar() {
                                                     <li className="nav-item">
                                                         <a href="#sidebaremailTemplates" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebaremailTemplates" data-key="t-email-templates">
                                                             Email Templates
-                                                            
+
                                                         </a>
                                                         <div className="collapse menu-dropdown" id="sidebaremailTemplates">
                                                             <ul className="nav nav-sm flex-column">
