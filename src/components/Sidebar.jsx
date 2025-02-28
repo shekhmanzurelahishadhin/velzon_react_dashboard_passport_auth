@@ -120,7 +120,7 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarApps">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <NavLink to="apps-chat.html" className="nav-link" data-key="t-chat"> Chat </NavLink>
+                                            <NavLink to="apps-chat.html" className="nav-link" data-key="t-chat"> Chat  </NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <a href="#sidebarEmail" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
@@ -134,6 +134,7 @@ export default function Sidebar() {
                                                     <li className="nav-item">
                                                         <a href="#sidebaremailTemplates" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebaremailTemplates" data-key="t-email-templates">
                                                             Email Templates
+                                                            
                                                         </a>
                                                         <div className="collapse menu-dropdown" id="sidebaremailTemplates">
                                                             <ul className="nav nav-sm flex-column">
