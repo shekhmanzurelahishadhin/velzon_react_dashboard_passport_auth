@@ -13,8 +13,8 @@ export default function Dashboard() {
                             <div className="col-12">
                                 <div className="d-flex align-items-lg-center flex-lg-row flex-column">
                                     <div className="flex-grow-1">
-                                        <h4 className="fs-16 mb-1">Good Morning, Anna! </h4>
-                                        <p className="text-muted mb-0">Here's what's happening with your store today. </p>
+                                        <h4 className="fs-16 mb-1">Good Morning, Anna!</h4>
+                                        <p className="text-muted mb-0">Here's what's happening with your store today.</p>
                                     </div>
                                     <div className="mt-3 mt-lg-0">
                                         <form action="javascript:void(0);">
@@ -122,7 +122,7 @@ export default function Dashboard() {
                                         <div className="d-flex align-items-end justify-content-between mt-4">
                                             <div>
                                                 <h4 className="fs-22 fw-semibold ff-secondary mb-4"><span className="counter-value" data-target="183.35">0</span>M </h4>
-                                                <a href="#" className="text-decoration-underline">See details</a>
+                                                <a href="#" className="text-decoration-underline">See details </a>
                                             </div>
                                             <div className="avatar-sm flex-shrink-0">
                                                 <span className="avatar-title bg-warning-subtle rounded fs-3">
