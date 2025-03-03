@@ -19,7 +19,7 @@ export default function Dashboard() {
                                     <div className="mt-3 mt-lg-0">
                                         <form action="javascript:void(0);">
                                             <div className="row g-3 mb-0 align-items-center">
-                                                <div className="col-sm-auto">
+                                                <div className="col-sm-auto" >
                                                     <div className="input-group">
                                                         <input type="text" className="form-control border-0 minimal-border dash-filter-picker shadow" data-provider="flatpickr" data-range-date="true" data-date-format="d M, Y" data-deafult-date="01 Jan 2022 to 31 Jan 2022" />
                                                         <div className="input-group-text bg-primary border-primary text-white">
