@@ -115,14 +115,14 @@ export default function Dashboard() {
                                             </div>
                                             <div className="flex-shrink-0">
                                                 <h5 className="text-success fs-14 mb-0">
-                                                    <i className="ri-arrow-right-up-line fs-13 align-middle"></i> +29.08 %
+                                                    <i className="ri-arrow-right-up-line fs-13 align-middle"></i> +29.88 %
                                                 </h5>
                                             </div>
                                         </div>
                                         <div className="d-flex align-items-end justify-content-between mt-4">
                                             <div>
                                                 <h4 className="fs-22 fw-semibold ff-secondary mb-4"><span className="counter-value" data-target="183.35">0</span>M </h4>
-                                                <a href="#" className="text-decoration-underline">See details </a>
+                                                <a href="#" className="text-decoration-underline">See details</a>
                                             </div>
                                             <div className="avatar-sm flex-shrink-0">
                                                 <span className="avatar-title bg-warning-subtle rounded fs-3">
