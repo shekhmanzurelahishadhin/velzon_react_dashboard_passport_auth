@@ -172,7 +172,7 @@ export default function
                                             <img src="/assets/images/demos/corporate.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
-                                    <h5 className="fs-13 text-center fw-medium mt-2">Corporate</h5>
+                                    <h5 className="fs-13 text-center fw-medium mt-2">Corporate </h5>
                                 </div>
                                 <div className="col-6">
                                     <div className="form-check card-radio">
