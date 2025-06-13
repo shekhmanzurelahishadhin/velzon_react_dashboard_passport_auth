@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
-export default function
-    () {
+export default function() {
     return (
         <div>
             <div className="auth-page-wrapper pt-5">
@@ -28,6 +28,7 @@ export default function
                                         </a>
                                     </div>
                                     <p className="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -43,18 +44,18 @@ export default function
                                             <p className="text-muted">Sign in to continue to Velzon.</p>
                                         </div>
                                         <div className="p-2 mt-4">
-                                            <form action="https://themesbrand.com/velzon/html/master/index.html">
+                                            <form>
 
                                                 <div className="mb-3">
-                                                    <label for="username" className="form-label">Username</label>
+                                                    <label htmlFor="username" className="form-label">Username</label>
                                                     <input type="text" className="form-control" id="username" placeholder="Enter username" />
                                                 </div>
 
                                                 <div className="mb-3">
                                                     <div className="float-end">
-                                                        <a href="auth-pass-reset-basic.html" className="text-muted">Forgot password?</a>
+                                                        <NavLink to="/auth/reset-password" className="text-muted">Forgot password?</NavLink>
                                                     </div>
-                                                    <label className="form-label" for="password-input">Password</label>
+                                                    <label className="form-label" htmlFor="password-input">Password</label>
                                                     <div className="position-relative auth-pass-inputgroup mb-3">
                                                         <input type="password" className="form-control pe-5 password-input" placeholder="Enter password" id="password-input" />
                                                         <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i className="ri-eye-fill align-middle"></i></button>
@@ -63,7 +64,7 @@ export default function
 
                                                 <div className="form-check">
                                                     <input className="form-check-input" type="checkbox" value="" id="auth-remember-check" />
-                                                    <label className="form-check-label" for="auth-remember-check">Remember me</label>
+                                                    <label className="form-check-label" htmlFor="auth-remember-check">Remember me</label>
                                                 </div>
 
                                                 <div className="mt-4">
@@ -89,7 +90,7 @@ export default function
 
 
                                 <div className="mt-4 text-center">
-                                    <p className="mb-0">Don't have an account ? <a href="auth-signup-basic.html" className="fw-semibold text-primary text-decoration-underline"> Signup </a> </p>
+                                    <p className="mb-0">Don't have an account ? <Link to="/auth/register" className="fw-semibold text-primary text-decoration-underline"> Signup </Link> </p>
                                 </div>
 
                             </div>

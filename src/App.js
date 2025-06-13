@@ -8,19 +8,22 @@ import AuthLayout from './layouts/AuthLayout';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import ResetPassword from './pages/auth/ResetPassword';
-
+import React, { useEffect } from "react";
 function App() {
+
+
   return (
     <Routes>
-      <Route path='/' element={<MainLayout/>}>
-        <Route index element={<Dashboard/>}/>
+      <Route path='/' element={<MainLayout />}>
+        <Route index element={<Dashboard />} />
       </Route>
-      <Route path='/' element={<AuthLayout/>}>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/reset-password' element={<ResetPassword/>}/>
-        <Route path='*' element={<NotFound/>}/>
+      <Route path='/auth' element={<AuthLayout />}>
+        <Route path='login' element={<Login />} />
+        <Route path='register' element={<Register />} />
+        <Route path='reset-password' element={<ResetPassword />} />
+        <Route path='*' element={<NotFound />} />
       </Route>
+
     </Routes>
   );
 }

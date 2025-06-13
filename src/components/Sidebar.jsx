@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Sidebar() {
     return (
@@ -7,23 +8,23 @@ export default function Sidebar() {
 
                 <div className="navbar-brand-box">
 
-                    <a href="index.html" className="logo logo-dark">
+                    <NavLink to="#" className="logo logo-dark">
                         <span className="logo-sm">
                             <img src="assets/images/logo-sm.png" alt="" height="22" />
                         </span>
                         <span className="logo-lg">
                             <img src="assets/images/logo-dark.png" alt="" height="17" />
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a href="index.html" className="logo logo-light">
+                    <NavLink to="#" className="logo logo-light">
                         <span className="logo-sm">
                             <img src="assets/images/logo-sm.png" alt="" height="22" />
                         </span>
                         <span className="logo-lg">
                             <img src="assets/images/logo-light.png" alt="" height="17" />
                         </span>
-                    </a>
+                    </NavLink>
                     <button type="button" className="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
                         <i className="ri-record-circle-line"></i>
                     </button>
@@ -42,15 +43,15 @@ export default function Sidebar() {
                     <div className="dropdown-menu dropdown-menu-end">
 
                         <h6 className="dropdown-header">Welcome Anna!</h6>
-                        <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></a>
-                        <a className="dropdown-item" href="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></a>
-                        <a className="dropdown-item" href="apps-tasks-kanban.html"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></a>
-                        <a className="dropdown-item" href="pages-faqs.html"><i className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Help</span></a>
+                        <NavLink className="dropdown-item" to="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></NavLink>
+                        <NavLink className="dropdown-item" to="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></NavLink>
+                        <NavLink className="dropdown-item" to="apps-tasks-kanban.html"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></NavLink>
+                        <NavLink className="dropdown-item" to="pages-faqs.html"><i className="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Help</span></NavLink>
                         <div className="dropdown-divider"></div>
-                        <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></a>
-                        <a className="dropdown-item" href="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></a>
-                        <a className="dropdown-item" href="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
-                        <a className="dropdown-item" href="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
+                        <NavLink className="dropdown-item" to="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></NavLink>
+                        <NavLink className="dropdown-item" to="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></NavLink>
+                        <NavLink className="dropdown-item" to="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></NavLink>
+                        <NavLink className="dropdown-item" to="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></NavLink>
                     </div>
                 </div>
                 <div id="scrollbar" className='h-100 simplebar-scrollable-y'>
@@ -68,25 +69,25 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarDashboards">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="dashboard-analytics.html" className="nav-link" data-key="t-analytics"> Analytics </a>
+                                            <NavLink to="/test" className="nav-link" data-key="t-analytics"> Analytics </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="dashboard-crm.html" className="nav-link" data-key="t-crm"> CRM </a>
+                                            <NavLink to="dashboard-crm.html" className="nav-link" data-key="t-crm"> CRM </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="index.html" className="nav-link" data-key="t-ecommerce"> Ecommerce </a>
+                                            <NavLink to="#" className="nav-link" data-key="t-ecommerce"> Ecommerce </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="dashboard-crypto.html" className="nav-link" data-key="t-crypto"> Crypto </a>
+                                            <NavLink to="dashboard-crypto.html" className="nav-link" data-key="t-crypto"> Crypto </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="dashboard-projects.html" className="nav-link" data-key="t-projects"> Projects </a>
+                                            <NavLink to="dashboard-projects.html" className="nav-link" data-key="t-projects"> Projects </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="dashboard-nft.html" className="nav-link" data-key="t-nft"> NFT</a>
+                                            <NavLink to="dashboard-nft.html" className="nav-link" data-key="t-nft"> NFT</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="dashboard-job.html" className="nav-link" data-key="t-job">Job</a>
+                                            <NavLink to="dashboard-job.html" className="nav-link" data-key="t-job">Job</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -104,16 +105,16 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarCalendar">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-calendar.html" className="nav-link" data-key="t-main-calender"> Main Calender </a>
+                                                        <NavLink to="apps-calendar.html" className="nav-link" data-key="t-main-calender"> Main Calender </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-calendar-month-grid.html" className="nav-link" data-key="t-month-grid"> Month Grid </a>
+                                                        <NavLink to="apps-calendar-month-grid.html" className="nav-link" data-key="t-month-grid"> Month Grid </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="apps-chat.html" className="nav-link" data-key="t-chat"> Chat </a>
+                                            <NavLink to="apps-chat.html" className="nav-link" data-key="t-chat"> Chat </NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <a href="#sidebarEmail" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEmail" data-key="t-email">
@@ -122,7 +123,7 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarEmail">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-mailbox.html" className="nav-link" data-key="t-mailbox"> Mailbox </a>
+                                                        <NavLink to="apps-mailbox.html" className="nav-link" data-key="t-mailbox"> Mailbox </NavLink>
                                                     </li>
                                                     <li className="nav-item">
                                                         <a href="#sidebaremailTemplates" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebaremailTemplates" data-key="t-email-templates">
@@ -131,10 +132,10 @@ export default function Sidebar() {
                                                         <div className="collapse menu-dropdown" id="sidebaremailTemplates">
                                                             <ul className="nav nav-sm flex-column">
                                                                 <li className="nav-item">
-                                                                    <a href="apps-email-basic.html" className="nav-link" data-key="t-basic-action"> Basic Action </a>
+                                                                    <NavLink to="apps-email-basic.html" className="nav-link" data-key="t-basic-action"> Basic Action </NavLink>
                                                                 </li>
                                                                 <li className="nav-item">
-                                                                    <a href="apps-email-ecommerce.html" className="nav-link" data-key="t-ecommerce-action"> Ecommerce Action </a>
+                                                                    <NavLink to="apps-email-ecommerce.html" className="nav-link" data-key="t-ecommerce-action"> Ecommerce Action </NavLink>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -149,36 +150,36 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarEcommerce">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-products.html" className="nav-link" data-key="t-products"> Products </a>
+                                                        <NavLink to="apps-ecommerce-products.html" className="nav-link" data-key="t-products"> Products </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-product-details.html" className="nav-link" data-key="t-product-Details"> Product Details </a>
+                                                        <NavLink to="apps-ecommerce-product-details.html" className="nav-link" data-key="t-product-Details"> Product Details </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-add-product.html" className="nav-link" data-key="t-create-product"> Create Product </a>
+                                                        <NavLink to="apps-ecommerce-add-product.html" className="nav-link" data-key="t-create-product"> Create Product </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-orders.html" className="nav-link" data-key="t-orders">
-                                                            Orders </a>
+                                                        <NavLink to="apps-ecommerce-orders.html" className="nav-link" data-key="t-orders">
+                                                            Orders </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-order-details.html" className="nav-link" data-key="t-order-details"> Order Details </a>
+                                                        <NavLink to="apps-ecommerce-order-details.html" className="nav-link" data-key="t-order-details"> Order Details </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-customers.html" className="nav-link" data-key="t-customers"> Customers </a>
+                                                        <NavLink to="apps-ecommerce-customers.html" className="nav-link" data-key="t-customers"> Customers </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-cart.html" className="nav-link" data-key="t-shopping-cart"> Shopping Cart </a>
+                                                        <NavLink to="apps-ecommerce-cart.html" className="nav-link" data-key="t-shopping-cart"> Shopping Cart </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-checkout.html" className="nav-link" data-key="t-checkout"> Checkout </a>
+                                                        <NavLink to="apps-ecommerce-checkout.html" className="nav-link" data-key="t-checkout"> Checkout </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-sellers.html" className="nav-link" data-key="t-sellers">
-                                                            Sellers </a>
+                                                        <NavLink to="apps-ecommerce-sellers.html" className="nav-link" data-key="t-sellers">
+                                                            Sellers </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-ecommerce-seller-details.html" className="nav-link" data-key="t-sellers-details"> Seller Details </a>
+                                                        <NavLink to="apps-ecommerce-seller-details.html" className="nav-link" data-key="t-sellers-details"> Seller Details </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -190,33 +191,33 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarProjects">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-projects-list.html" className="nav-link" data-key="t-list"> List
-                                                        </a>
+                                                        <NavLink to="apps-projects-list.html" className="nav-link" data-key="t-list"> List
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-projects-overview.html" className="nav-link" data-key="t-overview"> Overview </a>
+                                                        <NavLink to="apps-projects-overview.html" className="nav-link" data-key="t-overview"> Overview </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-projects-create.html" className="nav-link" data-key="t-create-project"> Create Project </a>
+                                                        <NavLink to="apps-projects-create.html" className="nav-link" data-key="t-create-project"> Create Project </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="#sidebarTasks" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTasks" data-key="t-tasks"> Tasks
+                                            <a threfo="#sidebarTasks" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTasks" data-key="t-tasks"> Tasks
                                             </a>
                                             <div className="collapse menu-dropdown" id="sidebarTasks">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-tasks-kanban.html" className="nav-link" data-key="t-kanbanboard">
-                                                            Kanban Board </a>
+                                                        <NavLink to="apps-tasks-kanban.html" className="nav-link" data-key="t-kanbanboard">
+                                                            Kanban Board </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-tasks-list-view.html" className="nav-link" data-key="t-list-view">
-                                                            List View </a>
+                                                        <NavLink to="apps-tasks-list-view.html" className="nav-link" data-key="t-list-view">
+                                                            List View </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-tasks-details.html" className="nav-link" data-key="t-task-details"> Task Details </a>
+                                                        <NavLink to="apps-tasks-details.html" className="nav-link" data-key="t-task-details"> Task Details </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -227,20 +228,20 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarCRM">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-crm-contacts.html" className="nav-link" data-key="t-contacts">
-                                                            Contacts </a>
+                                                        <NavLink to="apps-crm-contacts.html" className="nav-link" data-key="t-contacts">
+                                                            Contacts </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crm-companies.html" className="nav-link" data-key="t-companies">
-                                                            Companies </a>
+                                                        <NavLink to="apps-crm-companies.html" className="nav-link" data-key="t-companies">
+                                                            Companies </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crm-deals.html" className="nav-link" data-key="t-deals"> Deals
-                                                        </a>
+                                                        <NavLink to="apps-crm-deals.html" className="nav-link" data-key="t-deals"> Deals
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crm-leads.html" className="nav-link" data-key="t-leads"> Leads
-                                                        </a>
+                                                        <NavLink to="apps-crm-leads.html" className="nav-link" data-key="t-leads"> Leads
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -251,26 +252,26 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarCrypto">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-crypto-transactions.html" className="nav-link" data-key="t-transactions"> Transactions </a>
+                                                        <NavLink to="apps-crypto-transactions.html" className="nav-link" data-key="t-transactions"> Transactions </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crypto-buy-sell.html" className="nav-link" data-key="t-buy-sell">
-                                                            Buy & Sell </a>
+                                                        <NavLink to="apps-crypto-buy-sell.html" className="nav-link" data-key="t-buy-sell">
+                                                            Buy & Sell </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crypto-orders.html" className="nav-link" data-key="t-orders">
-                                                            Orders </a>
+                                                        <NavLink to="apps-crypto-orders.html" className="nav-link" data-key="t-orders">
+                                                            Orders </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crypto-wallet.html" className="nav-link" data-key="t-my-wallet">
-                                                            My Wallet </a>
+                                                        <NavLink to="apps-crypto-wallet.html" className="nav-link" data-key="t-my-wallet">
+                                                            My Wallet </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crypto-ico.html" className="nav-link" data-key="t-ico-list"> ICO
-                                                            List </a>
+                                                        <NavLink to="apps-crypto-ico.html" className="nav-link" data-key="t-ico-list"> ICO
+                                                            List </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-crypto-kyc.html" className="nav-link" data-key="t-kyc-application"> KYC Application </a>
+                                                        <NavLink to="apps-crypto-kyc.html" className="nav-link" data-key="t-kyc-application"> KYC Application </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -282,15 +283,15 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarInvoices">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-invoices-list.html" className="nav-link" data-key="t-list-view">
-                                                            List View </a>
+                                                        <NavLink to="apps-invoices-list.html" className="nav-link" data-key="t-list-view">
+                                                            List View </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-invoices-details.html" className="nav-link" data-key="t-details">
-                                                            Details </a>
+                                                        <NavLink to="apps-invoices-details.html" className="nav-link" data-key="t-details">
+                                                            Details </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-invoices-create.html" className="nav-link" data-key="t-create-invoice"> Create Invoice </a>
+                                                        <NavLink to="apps-invoices-create.html" className="nav-link" data-key="t-create-invoice"> Create Invoice </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -302,11 +303,11 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarTickets">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-tickets-list.html" className="nav-link" data-key="t-list-view">
-                                                            List View </a>
+                                                        <NavLink to="apps-tickets-list.html" className="nav-link" data-key="t-list-view">
+                                                            List View </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-tickets-details.html" className="nav-link" data-key="t-ticket-details"> Ticket Details </a>
+                                                        <NavLink to="apps-tickets-details.html" className="nav-link" data-key="t-ticket-details"> Ticket Details </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -318,47 +319,47 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarnft">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-marketplace.html" className="nav-link" data-key="t-marketplace"> Marketplace </a>
+                                                        <NavLink to="apps-nft-marketplace.html" className="nav-link" data-key="t-marketplace"> Marketplace </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-explore.html" className="nav-link" data-key="t-explore-now"> Explore Now </a>
+                                                        <NavLink to="apps-nft-explore.html" className="nav-link" data-key="t-explore-now"> Explore Now </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-auction.html" className="nav-link" data-key="t-live-auction"> Live Auction </a>
+                                                        <NavLink to="apps-nft-auction.html" className="nav-link" data-key="t-live-auction"> Live Auction </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-item-details.html" className="nav-link" data-key="t-item-details"> Item Details </a>
+                                                        <NavLink to="apps-nft-item-details.html" className="nav-link" data-key="t-item-details"> Item Details </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-collections.html" className="nav-link" data-key="t-collections"> Collections </a>
+                                                        <NavLink to="apps-nft-collections.html" className="nav-link" data-key="t-collections"> Collections </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-creators.html" className="nav-link" data-key="t-creators"> Creators </a>
+                                                        <NavLink to="apps-nft-creators.html" className="nav-link" data-key="t-creators"> Creators </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-ranking.html" className="nav-link" data-key="t-ranking"> Ranking </a>
+                                                        <NavLink to="apps-nft-ranking.html" className="nav-link" data-key="t-ranking"> Ranking </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-wallet.html" className="nav-link" data-key="t-wallet-connect"> Wallet Connect </a>
+                                                        <NavLink to="apps-nft-wallet.html" className="nav-link" data-key="t-wallet-connect"> Wallet Connect </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-nft-create.html" className="nav-link" data-key="t-create-nft"> Create NFT </a>
+                                                        <NavLink to="apps-nft-create.html" className="nav-link" data-key="t-create-nft"> Create NFT </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="apps-file-manager.html" className="nav-link"> <span data-key="t-file-manager">File Manager</span></a>
+                                            <NavLink to="apps-file-manager.html" className="nav-link"> <span data-key="t-file-manager">File Manager</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="apps-todo.html" className="nav-link"> <span data-key="t-to-do">To Do</span></a>
+                                            <NavLink to="apps-todo.html" className="nav-link"> <span data-key="t-to-do">To Do</span></NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <a href="#sidebarjobs" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarjobs" data-key="t-jobs"> Jobs</a>
                                             <div className="collapse menu-dropdown" id="sidebarjobs">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="apps-job-statistics.html" className="nav-link" data-key="t-statistics"> Statistics </a>
+                                                        <NavLink to="apps-job-statistics.html" className="nav-link" data-key="t-statistics"> Statistics </NavLink>
                                                     </li>
                                                     <li className="nav-item">
                                                         <a href="#sidebarJoblists" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarJoblists" data-key="t-job-lists">
@@ -367,14 +368,14 @@ export default function Sidebar() {
                                                         <div className="collapse menu-dropdown" id="sidebarJoblists">
                                                             <ul className="nav nav-sm flex-column">
                                                                 <li className="nav-item">
-                                                                    <a href="apps-job-lists.html" className="nav-link" data-key="t-list"> List
-                                                                    </a>
+                                                                    <NavLink to="apps-job-lists.html" className="nav-link" data-key="t-list"> List
+                                                                    </NavLink>
                                                                 </li>
                                                                 <li className="nav-item">
-                                                                    <a href="apps-job-grid-lists.html" className="nav-link" data-key="t-grid"> Grid </a>
+                                                                    <NavLink to="apps-job-grid-lists.html" className="nav-link" data-key="t-grid"> Grid </NavLink>
                                                                 </li>
                                                                 <li className="nav-item">
-                                                                    <a href="apps-job-details.html" className="nav-link" data-key="t-overview"> Overview</a>
+                                                                    <NavLink to="apps-job-details.html" className="nav-link" data-key="t-overview"> Overview</NavLink>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -386,32 +387,32 @@ export default function Sidebar() {
                                                         <div className="collapse menu-dropdown" id="sidebarCandidatelists">
                                                             <ul className="nav nav-sm flex-column">
                                                                 <li className="nav-item">
-                                                                    <a href="apps-job-candidate-lists.html" className="nav-link" data-key="t-list-view"> List View
-                                                                    </a>
+                                                                    <NavLink to="apps-job-candidate-lists.html" className="nav-link" data-key="t-list-view"> List View
+                                                                    </NavLink>
                                                                 </li>
                                                                 <li className="nav-item">
-                                                                    <a href="apps-job-candidate-grid.html" className="nav-link" data-key="t-grid-view"> Grid View</a>
+                                                                    <NavLink to="apps-job-candidate-grid.html" className="nav-link" data-key="t-grid-view"> Grid View</NavLink>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-job-application.html" className="nav-link" data-key="t-application"> Application </a>
+                                                        <NavLink to="apps-job-application.html" className="nav-link" data-key="t-application"> Application </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-job-new.html" className="nav-link" data-key="t-new-job"> New Job </a>
+                                                        <NavLink to="apps-job-new.html" className="nav-link" data-key="t-new-job"> New Job </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-job-companies-lists.html" className="nav-link" data-key="t-companies-list"> Companies List </a>
+                                                        <NavLink to="apps-job-companies-lists.html" className="nav-link" data-key="t-companies-list"> Companies List </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="apps-job-categories.html" className="nav-link" data-key="t-job-categories"> Job Categories</a>
+                                                        <NavLink to="apps-job-categories.html" className="nav-link" data-key="t-job-categories"> Job Categories</NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="apps-api-key.html" className="nav-link" data-key="t-api-key">API Key</a>
+                                            <NavLink to="apps-api-key.html" className="nav-link" data-key="t-api-key">API Key</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -424,16 +425,16 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarLayouts">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="layouts-horizontal.html" target="_blank" className="nav-link" data-key="t-horizontal">Horizontal</a>
+                                            <NavLink to="layouts-horizontal.html" target="_blank" className="nav-link" data-key="t-horizontal">Horizontal</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="layouts-detached.html" target="_blank" className="nav-link" data-key="t-detached">Detached</a>
+                                            <NavLink to="layouts-detached.html" target="_blank" className="nav-link" data-key="t-detached">Detached</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="layouts-two-column.html" target="_blank" className="nav-link" data-key="t-two-column">Two Column</a>
+                                            <NavLink to="layouts-two-column.html" target="_blank" className="nav-link" data-key="t-two-column">Two Column</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="layouts-vertical-hovered.html" target="_blank" className="nav-link" data-key="t-hovered">Hovered</a>
+                                            <NavLink to="layouts-vertical-hovered.html" target="_blank" className="nav-link" data-key="t-hovered">Hovered</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -453,12 +454,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarSignIn">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-signin-basic.html" className="nav-link" data-key="t-basic"> Basic
-                                                        </a>
+                                                        <NavLink to="auth-signin-basic.html" className="nav-link" data-key="t-basic"> Basic
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-signin-cover.html" className="nav-link" data-key="t-cover"> Cover
-                                                        </a>
+                                                        <NavLink to="auth-signin-cover.html" className="nav-link" data-key="t-cover"> Cover
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -469,12 +470,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarSignUp">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-signup-basic.html" className="nav-link" data-key="t-basic"> Basic
-                                                        </a>
+                                                        <NavLink to="auth-signup-basic.html" className="nav-link" data-key="t-basic"> Basic
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-signup-cover.html" className="nav-link" data-key="t-cover"> Cover
-                                                        </a>
+                                                        <NavLink to="auth-signup-cover.html" className="nav-link" data-key="t-cover"> Cover
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -487,12 +488,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarResetPass">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-pass-reset-basic.html" className="nav-link" data-key="t-basic">
-                                                            Basic </a>
+                                                        <NavLink to="auth-pass-reset-basic.html" className="nav-link" data-key="t-basic">
+                                                            Basic </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-pass-reset-cover.html" className="nav-link" data-key="t-cover">
-                                                            Cover </a>
+                                                        <NavLink to="auth-pass-reset-cover.html" className="nav-link" data-key="t-cover">
+                                                            Cover </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -505,12 +506,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarchangePass">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-pass-change-basic.html" className="nav-link" data-key="t-basic">
-                                                            Basic </a>
+                                                        <NavLink to="auth-pass-change-basic.html" className="nav-link" data-key="t-basic">
+                                                            Basic </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-pass-change-cover.html" className="nav-link" data-key="t-cover">
-                                                            Cover </a>
+                                                        <NavLink to="auth-pass-change-cover.html" className="nav-link" data-key="t-cover">
+                                                            Cover </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -523,12 +524,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarLockScreen">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-lockscreen-basic.html" className="nav-link" data-key="t-basic">
-                                                            Basic </a>
+                                                        <NavLink to="auth-lockscreen-basic.html" className="nav-link" data-key="t-basic">
+                                                            Basic </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-lockscreen-cover.html" className="nav-link" data-key="t-cover">
-                                                            Cover </a>
+                                                        <NavLink to="auth-lockscreen-cover.html" className="nav-link" data-key="t-cover">
+                                                            Cover </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -540,12 +541,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarLogout">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-logout-basic.html" className="nav-link" data-key="t-basic"> Basic
-                                                        </a>
+                                                        <NavLink to="auth-logout-basic.html" className="nav-link" data-key="t-basic"> Basic
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-logout-cover.html" className="nav-link" data-key="t-cover"> Cover
-                                                        </a>
+                                                        <NavLink to="auth-logout-cover.html" className="nav-link" data-key="t-cover"> Cover
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -556,12 +557,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarSuccessMsg">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-success-msg-basic.html" className="nav-link" data-key="t-basic">
-                                                            Basic </a>
+                                                        <NavLink to="auth-success-msg-basic.html" className="nav-link" data-key="t-basic">
+                                                            Basic </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-success-msg-cover.html" className="nav-link" data-key="t-cover">
-                                                            Cover </a>
+                                                        <NavLink to="auth-success-msg-cover.html" className="nav-link" data-key="t-cover">
+                                                            Cover </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -572,12 +573,12 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarTwoStep">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-twostep-basic.html" className="nav-link" data-key="t-basic"> Basic
-                                                        </a>
+                                                        <NavLink to="auth-twostep-basic.html" className="nav-link" data-key="t-basic"> Basic
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-twostep-cover.html" className="nav-link" data-key="t-cover"> Cover
-                                                        </a>
+                                                        <NavLink to="auth-twostep-cover.html" className="nav-link" data-key="t-cover"> Cover
+                                                        </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -588,22 +589,22 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarErrors">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="auth-404-basic.html" className="nav-link" data-key="t-404-basic"> 404
-                                                            Basic </a>
+                                                        <NavLink to="auth-404-basic.html" className="nav-link" data-key="t-404-basic"> 404
+                                                            Basic </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-404-cover.html" className="nav-link" data-key="t-404-cover"> 404
-                                                            Cover </a>
+                                                        <NavLink to="auth-404-cover.html" className="nav-link" data-key="t-404-cover"> 404
+                                                            Cover </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-404-alt.html" className="nav-link" data-key="t-404-alt"> 404 Alt
-                                                        </a>
+                                                        <NavLink to="auth-404-alt.html" className="nav-link" data-key="t-404-alt"> 404 Alt
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-500.html" className="nav-link" data-key="t-500"> 500 </a>
+                                                        <NavLink to="auth-500.html" className="nav-link" data-key="t-500"> 500 </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="auth-offline.html" className="nav-link" data-key="t-offline-page"> Offline Page </a>
+                                                        <NavLink to="auth-offline.html" className="nav-link" data-key="t-offline-page"> Offline Page </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -619,7 +620,7 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarPages">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="pages-starter.html" className="nav-link" data-key="t-starter"> Starter </a>
+                                            <NavLink to="pages-starter.html" className="nav-link" data-key="t-starter"> Starter </NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <a href="#sidebarProfile" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProfile" data-key="t-profile"> Profile
@@ -627,49 +628,49 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarProfile">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="pages-profile.html" className="nav-link" data-key="t-simple-page">
-                                                            Simple Page </a>
+                                                        <NavLink to="pages-profile.html" className="nav-link" data-key="t-simple-page">
+                                                            Simple Page </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="pages-profile-settings.html" className="nav-link" data-key="t-settings"> Settings </a>
+                                                        <NavLink to="pages-profile-settings.html" className="nav-link" data-key="t-settings"> Settings </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-team.html" className="nav-link" data-key="t-team"> Team </a>
+                                            <NavLink to="pages-team.html" className="nav-link" data-key="t-team"> Team </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-timeline.html" className="nav-link" data-key="t-timeline"> Timeline </a>
+                                            <NavLink to="pages-timeline.html" className="nav-link" data-key="t-timeline"> Timeline </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-faqs.html" className="nav-link" data-key="t-faqs"> FAQs </a>
+                                            <NavLink to="pages-faqs.html" className="nav-link" data-key="t-faqs"> FAQs </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-pricing.html" className="nav-link" data-key="t-pricing"> Pricing </a>
+                                            <NavLink to="pages-pricing.html" className="nav-link" data-key="t-pricing"> Pricing </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-gallery.html" className="nav-link" data-key="t-gallery"> Gallery </a>
+                                            <NavLink to="pages-gallery.html" className="nav-link" data-key="t-gallery"> Gallery </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-maintenance.html" className="nav-link" data-key="t-maintenance"> Maintenance
-                                            </a>
+                                            <NavLink to="pages-maintenance.html" className="nav-link" data-key="t-maintenance"> Maintenance
+                                            </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-coming-soon.html" className="nav-link" data-key="t-coming-soon"> Coming Soon
-                                            </a>
+                                            <NavLink to="pages-coming-soon.html" className="nav-link" data-key="t-coming-soon"> Coming Soon
+                                            </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-sitemap.html" className="nav-link" data-key="t-sitemap"> Sitemap </a>
+                                            <NavLink to="pages-sitemap.html" className="nav-link" data-key="t-sitemap"> Sitemap </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-search-results.html" className="nav-link" data-key="t-search-results"> Search Results </a>
+                                            <NavLink to="pages-search-results.html" className="nav-link" data-key="t-search-results"> Search Results </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-privacy-policy.html" className="nav-link" data-key="t-privacy-policy">Privacy Policy</a>
+                                            <NavLink to="pages-privacy-policy.html" className="nav-link" data-key="t-privacy-policy">Privacy Policy</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="pages-term-conditions.html" className="nav-link" data-key="t-term-conditions">Term & Conditions</a>
+                                            <NavLink to="pages-term-conditions.html" className="nav-link" data-key="t-term-conditions">Term & Conditions</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -682,13 +683,13 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarLanding">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="landing.html" className="nav-link" data-key="t-one-page"> One Page </a>
+                                            <NavLink to="landing.html" className="nav-link" data-key="t-one-page"> One Page </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="nft-landing.html" className="nav-link" data-key="t-nft-landing"> NFT Landing </a>
+                                            <NavLink to="nft-landing.html" className="nav-link" data-key="t-nft-landing"> NFT Landing </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="job-landing.html" className="nav-link" data-key="t-job">Job</a>
+                                            <NavLink to="job-landing.html" className="nav-link" data-key="t-job">Job</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -705,86 +706,86 @@ export default function Sidebar() {
                                         <div className="col-lg-4">
                                             <ul className="nav nav-sm flex-column">
                                                 <li className="nav-item">
-                                                    <a href="ui-alerts.html" className="nav-link" data-key="t-alerts">Alerts</a>
+                                                    <NavLink to="ui-alerts.html" className="nav-link" data-key="t-alerts">Alerts</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-badges.html" className="nav-link" data-key="t-badges">Badges</a>
+                                                    <NavLink to="ui-badges.html" className="nav-link" data-key="t-badges">Badges</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-buttons.html" className="nav-link" data-key="t-buttons">Buttons</a>
+                                                    <NavLink to="ui-buttons.html" className="nav-link" data-key="t-buttons">Buttons</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-colors.html" className="nav-link" data-key="t-colors">Colors</a>
+                                                    <NavLink to="ui-colors.html" className="nav-link" data-key="t-colors">Colors</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-cards.html" className="nav-link" data-key="t-cards">Cards</a>
+                                                    <NavLink to="ui-cards.html" className="nav-link" data-key="t-cards">Cards</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-carousel.html" className="nav-link" data-key="t-carousel">Carousel</a>
+                                                    <NavLink to="ui-carousel.html" className="nav-link" data-key="t-carousel">Carousel</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-dropdowns.html" className="nav-link" data-key="t-dropdowns">Dropdowns</a>
+                                                    <NavLink to="ui-dropdowns.html" className="nav-link" data-key="t-dropdowns">Dropdowns</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-grid.html" className="nav-link" data-key="t-grid">Grid</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-lg-4">
-                                            <ul className="nav nav-sm flex-column">
-                                                <li className="nav-item">
-                                                    <a href="ui-images.html" className="nav-link" data-key="t-images">Images</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-tabs.html" className="nav-link" data-key="t-tabs">Tabs</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-accordions.html" className="nav-link" data-key="t-accordion-collapse">Accordion & Collapse</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-modals.html" className="nav-link" data-key="t-modals">Modals</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-offcanvas.html" className="nav-link" data-key="t-offcanvas">Offcanvas</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-placeholders.html" className="nav-link" data-key="t-placeholders">Placeholders</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-progress.html" className="nav-link" data-key="t-progress">Progress</a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a href="ui-notifications.html" className="nav-link" data-key="t-notifications">Notifications</a>
+                                                    <NavLink to="ui-grid.html" className="nav-link" data-key="t-grid">Grid</NavLink>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div className="col-lg-4">
                                             <ul className="nav nav-sm flex-column">
                                                 <li className="nav-item">
-                                                    <a href="ui-media.html" className="nav-link" data-key="t-media-object">Media
-                                                        object</a>
+                                                    <NavLink to="ui-images.html" className="nav-link" data-key="t-images">Images</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-embed-video.html" className="nav-link" data-key="t-embed-video">Embed
-                                                        Video</a>
+                                                    <NavLink to="ui-tabs.html" className="nav-link" data-key="t-tabs">Tabs</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-typography.html" className="nav-link" data-key="t-typography">Typography</a>
+                                                    <NavLink to="ui-accordions.html" className="nav-link" data-key="t-accordion-collapse">Accordion & Collapse</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-lists.html" className="nav-link" data-key="t-lists">Lists</a>
+                                                    <NavLink to="ui-modals.html" className="nav-link" data-key="t-modals">Modals</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-links.html" className="nav-link"><span data-key="t-links">Links</span> <span className="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                                    <NavLink to="ui-offcanvas.html" className="nav-link" data-key="t-offcanvas">Offcanvas</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-general.html" className="nav-link" data-key="t-general">General</a>
+                                                    <NavLink to="ui-placeholders.html" className="nav-link" data-key="t-placeholders">Placeholders</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-ribbons.html" className="nav-link" data-key="t-ribbons">Ribbons</a>
+                                                    <NavLink to="ui-progress.html" className="nav-link" data-key="t-progress">Progress</NavLink>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a href="ui-utilities.html" className="nav-link" data-key="t-utilities">Utilities</a>
+                                                    <NavLink to="ui-notifications.html" className="nav-link" data-key="t-notifications">Notifications</NavLink>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-lg-4">
+                                            <ul className="nav nav-sm flex-column">
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-media.html" className="nav-link" data-key="t-media-object">Media
+                                                        object</NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-embed-video.html" className="nav-link" data-key="t-embed-video">Embed
+                                                        Video</NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-typography.html" className="nav-link" data-key="t-typography">Typography</NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-lists.html" className="nav-link" data-key="t-lists">Lists</NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-links.html" className="nav-link"><span data-key="t-links">Links</span> <span className="badge badge-pill bg-success" data-key="t-new">New</span></NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-general.html" className="nav-link" data-key="t-general">General</NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-ribbons.html" className="nav-link" data-key="t-ribbons">Ribbons</NavLink>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <NavLink to="ui-utilities.html" className="nav-link" data-key="t-utilities">Utilities</NavLink>
                                                 </li>
                                             </ul>
                                         </div>
@@ -799,34 +800,34 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarAdvanceUI">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="advance-ui-sweetalerts.html" className="nav-link" data-key="t-sweet-alerts">Sweet
-                                                Alerts</a>
+                                            <NavLink to="advance-ui-sweetalerts.html" className="nav-link" data-key="t-sweet-alerts">Sweet
+                                                Alerts</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-nestable.html" className="nav-link" data-key="t-nestable-list">Nestable
-                                                List</a>
+                                            <NavLink to="advance-ui-nestable.html" className="nav-link" data-key="t-nestable-list">Nestable
+                                                List</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-scrollbar.html" className="nav-link" data-key="t-scrollbar">Scrollbar</a>
+                                            <NavLink to="advance-ui-scrollbar.html" className="nav-link" data-key="t-scrollbar">Scrollbar</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-animation.html" className="nav-link" data-key="t-animation">Animation</a>
+                                            <NavLink to="advance-ui-animation.html" className="nav-link" data-key="t-animation">Animation</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-tour.html" className="nav-link" data-key="t-tour">Tour</a>
+                                            <NavLink to="advance-ui-tour.html" className="nav-link" data-key="t-tour">Tour</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-swiper.html" className="nav-link" data-key="t-swiper-slider">Swiper
-                                                Slider</a>
+                                            <NavLink to="advance-ui-swiper.html" className="nav-link" data-key="t-swiper-slider">Swiper
+                                                Slider</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-ratings.html" className="nav-link" data-key="t-ratings">Ratings</a>
+                                            <NavLink to="advance-ui-ratings.html" className="nav-link" data-key="t-ratings">Ratings</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-highlight.html" className="nav-link" data-key="t-highlight">Highlight</a>
+                                            <NavLink to="advance-ui-highlight.html" className="nav-link" data-key="t-highlight">Highlight</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="advance-ui-scrollspy.html" className="nav-link" data-key="t-scrollSpy">ScrollSpy</a>
+                                            <NavLink to="advance-ui-scrollspy.html" className="nav-link" data-key="t-scrollSpy">ScrollSpy</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -845,46 +846,46 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarForms">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="forms-elements.html" className="nav-link" data-key="t-basic-elements">Basic
-                                                Elements</a>
+                                            <NavLink to="forms-elements.html" className="nav-link" data-key="t-basic-elements">Basic
+                                                Elements</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-select.html" className="nav-link" data-key="t-form-select"> Form Select </a>
+                                            <NavLink to="forms-select.html" className="nav-link" data-key="t-form-select"> Form Select </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-checkboxs-radios.html" className="nav-link" data-key="t-checkboxs-radios">Checkboxs & Radios</a>
+                                            <NavLink to="forms-checkboxs-radios.html" className="nav-link" data-key="t-checkboxs-radios">Checkboxs & Radios</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-pickers.html" className="nav-link" data-key="t-pickers"> Pickers </a>
+                                            <NavLink to="forms-pickers.html" className="nav-link" data-key="t-pickers"> Pickers </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-masks.html" className="nav-link" data-key="t-input-masks">Input Masks</a>
+                                            <NavLink to="forms-masks.html" className="nav-link" data-key="t-input-masks">Input Masks</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-advanced.html" className="nav-link" data-key="t-advanced">Advanced</a>
+                                            <NavLink to="forms-advanced.html" className="nav-link" data-key="t-advanced">Advanced</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-range-sliders.html" className="nav-link" data-key="t-range-slider"> Range
-                                                Slider </a>
+                                            <NavLink to="forms-range-sliders.html" className="nav-link" data-key="t-range-slider"> Range
+                                                Slider </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-validation.html" className="nav-link" data-key="t-validation">Validation</a>
+                                            <NavLink to="forms-validation.html" className="nav-link" data-key="t-validation">Validation</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-wizard.html" className="nav-link" data-key="t-wizard">Wizard</a>
+                                            <NavLink to="forms-wizard.html" className="nav-link" data-key="t-wizard">Wizard</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-editors.html" className="nav-link" data-key="t-editors">Editors</a>
+                                            <NavLink to="forms-editors.html" className="nav-link" data-key="t-editors">Editors</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-file-uploads.html" className="nav-link" data-key="t-file-uploads">File
-                                                Uploads</a>
+                                            <NavLink to="forms-file-uploads.html" className="nav-link" data-key="t-file-uploads">File
+                                                Uploads</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-layouts.html" className="nav-link" data-key="t-form-layouts">Form Layouts</a>
+                                            <NavLink to="forms-layouts.html" className="nav-link" data-key="t-form-layouts">Form Layouts</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="forms-select2.html" className="nav-link" data-key="t-select2">Select2</a>
+                                            <NavLink to="forms-select2.html" className="nav-link" data-key="t-select2">Select2</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -897,16 +898,16 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarTables">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="tables-basic.html" className="nav-link" data-key="t-basic-tables">Basic Tables</a>
+                                            <NavLink to="tables-basic.html" className="nav-link" data-key="t-basic-tables">Basic Tables</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="tables-gridjs.html" className="nav-link" data-key="t-grid-js">Grid Js</a>
+                                            <NavLink to="tables-gridjs.html" className="nav-link" data-key="t-grid-js">Grid Js</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="tables-listjs.html" className="nav-link" data-key="t-list-js">List Js</a>
+                                            <NavLink to="tables-listjs.html" className="nav-link" data-key="t-list-js">List Js</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="tables-datatables.html" className="nav-link" data-key="t-datatables">Datatables</a>
+                                            <NavLink to="tables-datatables.html" className="nav-link" data-key="t-datatables">Datatables</NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -925,79 +926,79 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarApexcharts">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-line.html" className="nav-link" data-key="t-line"> Line
-                                                        </a>
+                                                        <NavLink to="charts-apex-line.html" className="nav-link" data-key="t-line"> Line
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-area.html" className="nav-link" data-key="t-area"> Area
-                                                        </a>
+                                                        <NavLink to="charts-apex-area.html" className="nav-link" data-key="t-area"> Area
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-column.html" className="nav-link" data-key="t-column">
-                                                            Column </a>
+                                                        <NavLink to="charts-apex-column.html" className="nav-link" data-key="t-column">
+                                                            Column </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-bar.html" className="nav-link" data-key="t-bar"> Bar </a>
+                                                        <NavLink to="charts-apex-bar.html" className="nav-link" data-key="t-bar"> Bar </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-mixed.html" className="nav-link" data-key="t-mixed"> Mixed
-                                                        </a>
+                                                        <NavLink to="charts-apex-mixed.html" className="nav-link" data-key="t-mixed"> Mixed
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-timeline.html" className="nav-link" data-key="t-timeline">
-                                                            Timeline </a>
+                                                        <NavLink to="charts-apex-timeline.html" className="nav-link" data-key="t-timeline">
+                                                            Timeline </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-range-area.html" className="nav-link"><span data-key="t-range-area">Range Area</span> <span className="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                                        <NavLink to="charts-apex-range-area.html" className="nav-link"><span data-key="t-range-area">Range Area</span> <span className="badge badge-pill bg-success" data-key="t-new">New</span></NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-funnel.html" className="nav-link"><span data-key="t-funnel">Funnel</span> <span className="badge badge-pill bg-success" data-key="t-new">New</span></a>
+                                                        <NavLink to="charts-apex-funnel.html" className="nav-link"><span data-key="t-funnel">Funnel</span> <span className="badge badge-pill bg-success" data-key="t-new">New</span></NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-candlestick.html" className="nav-link" data-key="t-candlstick"> Candlstick </a>
+                                                        <NavLink to="charts-apex-candlestick.html" className="nav-link" data-key="t-candlstick"> Candlstick </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-boxplot.html" className="nav-link" data-key="t-boxplot">
-                                                            Boxplot </a>
+                                                        <NavLink to="charts-apex-boxplot.html" className="nav-link" data-key="t-boxplot">
+                                                            Boxplot </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-bubble.html" className="nav-link" data-key="t-bubble">
-                                                            Bubble </a>
+                                                        <NavLink to="charts-apex-bubble.html" className="nav-link" data-key="t-bubble">
+                                                            Bubble </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-scatter.html" className="nav-link" data-key="t-scatter">
-                                                            Scatter </a>
+                                                        <NavLink to="charts-apex-scatter.html" className="nav-link" data-key="t-scatter">
+                                                            Scatter </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-heatmap.html" className="nav-link" data-key="t-heatmap">
-                                                            Heatmap </a>
+                                                        <NavLink to="charts-apex-heatmap.html" className="nav-link" data-key="t-heatmap">
+                                                            Heatmap </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-treemap.html" className="nav-link" data-key="t-treemap">
-                                                            Treemap </a>
+                                                        <NavLink to="charts-apex-treemap.html" className="nav-link" data-key="t-treemap">
+                                                            Treemap </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-pie.html" className="nav-link" data-key="t-pie"> Pie </a>
+                                                        <NavLink to="charts-apex-pie.html" className="nav-link" data-key="t-pie"> Pie </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-radialbar.html" className="nav-link" data-key="t-radialbar"> Radialbar </a>
+                                                        <NavLink to="charts-apex-radialbar.html" className="nav-link" data-key="t-radialbar"> Radialbar </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-radar.html" className="nav-link" data-key="t-radar"> Radar
-                                                        </a>
+                                                        <NavLink to="charts-apex-radar.html" className="nav-link" data-key="t-radar"> Radar
+                                                        </NavLink>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="charts-apex-polar.html" className="nav-link" data-key="t-polar-area">
-                                                            Polar Area </a>
+                                                        <NavLink to="charts-apex-polar.html" className="nav-link" data-key="t-polar-area">
+                                                            Polar Area </NavLink>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="charts-chartjs.html" className="nav-link" data-key="t-chartjs"> Chartjs </a>
+                                            <NavLink to="charts-chartjs.html" className="nav-link" data-key="t-chartjs"> Chartjs </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="charts-echarts.html" className="nav-link" data-key="t-echarts"> Echarts </a>
+                                            <NavLink to="charts-echarts.html" className="nav-link" data-key="t-echarts"> Echarts </NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -1010,22 +1011,22 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarIcons">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="icons-remix.html" className="nav-link"><span data-key="t-remix">Remix</span> <span className="badge badge-pill bg-info">v3.6</span></a>
+                                            <NavLink to="icons-remix.html" className="nav-link"><span data-key="t-remix">Remix</span> <span className="badge badge-pill bg-info">v3.6</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="icons-boxicons.html" className="nav-link"><span data-key="t-boxicons">Boxicons</span> <span className="badge badge-pill bg-info">v2.1.4</span></a>
+                                            <NavLink to="icons-boxicons.html" className="nav-link"><span data-key="t-boxicons">Boxicons</span> <span className="badge badge-pill bg-info">v2.1.4</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="icons-materialdesign.html" className="nav-link"><span data-key="t-material-design">Material Design</span> <span className="badge badge-pill bg-info">v7.2.96</span></a>
+                                            <NavLink to="icons-materialdesign.html" className="nav-link"><span data-key="t-material-design">Material Design</span> <span className="badge badge-pill bg-info">v7.2.96</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="icons-lineawesome.html" className="nav-link" data-key="t-line-awesome">Line Awesome</a>
+                                            <NavLink to="icons-lineawesome.html" className="nav-link" data-key="t-line-awesome">Line Awesome</NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="icons-feather.html" className="nav-link"><span data-key="t-feather">Feather</span> <span className="badge badge-pill bg-info">v4.29.1</span></a>
+                                            <NavLink to="icons-feather.html" className="nav-link"><span data-key="t-feather">Feather</span> <span className="badge badge-pill bg-info">v4.29.1</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="icons-crypto.html" className="nav-link"> <span data-key="t-crypto-svg">Crypto SVG</span></a>
+                                            <NavLink to="icons-crypto.html" className="nav-link"> <span data-key="t-crypto-svg">Crypto SVG</span></NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -1038,19 +1039,19 @@ export default function Sidebar() {
                                 <div className="collapse menu-dropdown" id="sidebarMaps">
                                     <ul className="nav nav-sm flex-column">
                                         <li className="nav-item">
-                                            <a href="maps-google.html" className="nav-link" data-key="t-google">
+                                            <NavLink to="maps-google.html" className="nav-link" data-key="t-google">
                                                 Google
-                                            </a>
+                                            </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="maps-vector.html" className="nav-link" data-key="t-vector">
+                                            <NavLink to="maps-vector.html" className="nav-link" data-key="t-vector">
                                                 Vector
-                                            </a>
+                                            </NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <a href="maps-leaflet.html" className="nav-link" data-key="t-leaflet">
+                                            <NavLink to="maps-leaflet.html" className="nav-link" data-key="t-leaflet">
                                                 Leaflet
-                                            </a>
+                                            </NavLink>
                                         </li>
                                     </ul>
                                 </div>
@@ -1075,7 +1076,7 @@ export default function Sidebar() {
                                                         <a href="#" className="nav-link" data-key="t-level-2.1"> Level 2.1 </a>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <a href="#sidebarCrm" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrm" data-key="t-level-2.2"> Level 2.2
+                                                        <a to="#sidebarCrm" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrm" data-key="t-level-2.2"> Level 2.2
                                                         </a>
                                                         <div className="collapse menu-dropdown" id="sidebarCrm">
                                                             <ul className="nav nav-sm flex-column">
@@ -1096,7 +1097,16 @@ export default function Sidebar() {
                                     </ul>
                                 </div>
                             </li>
-
+                            {/* <li className="nav-item">
+                                <NavLink className="nav-link menu-link" to="/auth/login">
+                                    Login
+                                </NavLink>
+                            </li> */}
+                            <li className="nav-item">
+                                <NavLink className="nav-link menu-link" to="/auth/login">
+                                    <i className="ri-login-box-line"></i> <span data-key="t-widgets">Login</span>
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
 
@@ -1104,6 +1114,7 @@ export default function Sidebar() {
 
                 <div className="sidebar-background"></div>
             </div>
+        
             <div className="vertical-overlay"></div>
         </div>
     )

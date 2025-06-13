@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function
 
@@ -109,7 +110,7 @@ export default function
                                
 
                                 <div class="mt-4 text-center">
-                                    <p class="mb-0">Already have an account ? <a href="auth-signin-basic.html" class="fw-semibold text-primary text-decoration-underline"> Signin </a> </p>
+                                    <p class="mb-0">Already have an account ? <NavLink to="/auth/login" class="fw-semibold text-primary text-decoration-underline"> Signin </NavLink> </p>
                                 </div>
 
                             </div>
