@@ -1,7 +1,36 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import axios from 'axios';
+import api from '../../../src/api/axios';
+import { toast } from 'react-toastify';
 
-export default function() {
+export default function () {
+    const [form, setForm] = useState({ email: '', password: '', message: '' });
+    const [loading, setLoading] = useState(false);
+
+    const updateField = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        api.post('/login', form)
+            .then(function (response) {
+                console.log('Login successful:', response.data);
+
+                if (response.data.token) {
+                    localStorage.setItem('auth_token', response.data.token);
+                     toast.success('Login successful!');
+                }
+                setForm({ email: '', password: '', message: '' });
+            })
+            .catch(function (error) {
+                 toast.error('Login failed. Please check your credentials.');
+            })
+            .finally(function () {
+                setLoading(false);
+            });
+    };
     return (
         <div>
             <div className="auth-page-wrapper pt-5">
@@ -28,7 +57,7 @@ export default function() {
                                         </a>
                                     </div>
                                     <p className="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -44,11 +73,11 @@ export default function() {
                                             <p className="text-muted">Sign in to continue to Velzon.</p>
                                         </div>
                                         <div className="p-2 mt-4">
-                                            <form>
+                                            <form onSubmit={handleSubmit}>
 
                                                 <div className="mb-3">
-                                                    <label htmlFor="username" className="form-label">Username</label>
-                                                    <input type="text" className="form-control" id="username" placeholder="Enter username" />
+                                                    <label htmlFor="email" className="form-label">Email</label>
+                                                    <input type="email" className="form-control" name='email' id="email" placeholder="Enter Email" value={form.email} onChange={updateField} />
                                                 </div>
 
                                                 <div className="mb-3">
@@ -57,7 +86,7 @@ export default function() {
                                                     </div>
                                                     <label className="form-label" htmlFor="password-input">Password</label>
                                                     <div className="position-relative auth-pass-inputgroup mb-3">
-                                                        <input type="password" className="form-control pe-5 password-input" placeholder="Enter password" id="password-input" />
+                                                        <input type="password" name='password' className="form-control pe-5 password-input" placeholder="Enter password" value={form.password} id="password-input" onChange={updateField} />
                                                         <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i className="ri-eye-fill align-middle"></i></button>
                                                     </div>
                                                 </div>
@@ -68,7 +97,19 @@ export default function() {
                                                 </div>
 
                                                 <div className="mt-4">
-                                                    <button className="btn btn-success w-100" type="submit">Sign In</button>
+                                                    <button className="btn btn-success w-100" type="submit" disabled={loading}>
+                                                        {!loading && <span>Sign In</span>}
+                                                        {loading && (
+                                                            <div
+                                                                className="spinner-border text-light"
+                                                                role="status"
+                                                                style={{ width: '1rem', height: '1rem', verticalAlign: 'middle' }}
+                                                            >
+                                                                <span className="visually-hidden">Loading...</span>
+                                                            </div>
+                                                        )}
+                                                    </button>
+
                                                 </div>
 
                                                 <div className="mt-4 text-center">

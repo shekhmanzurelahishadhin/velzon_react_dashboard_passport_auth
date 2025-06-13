@@ -151,7 +151,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme01" name="data-theme" type="radio" value="default" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme01">
-                                            <img src="../../assets/images/demo/default.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/default.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Default</h5>
@@ -160,7 +160,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme02" name="data-theme" type="radio" value="saas" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme02">
-                                            <img src="../../assets/images/demo/saas.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/saas.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Sass</h5>
@@ -169,7 +169,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme03" name="data-theme" type="radio" value="corporate" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme03">
-                                            <img src="../../assets/images/demo/corporate.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/corporate.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Corporate</h5>
@@ -178,7 +178,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme04" name="data-theme" type="radio" value="galaxy" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme04">
-                                            <img src="../../assets/images/demo/galaxy.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/galaxy.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Galaxy</h5>
@@ -187,7 +187,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme05" name="data-theme" type="radio" value="material" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme05">
-                                            <img src="../../assets/images/demo/material.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/material.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Material</h5>
@@ -196,7 +196,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme06" name="data-theme" type="radio" value="creative" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme06">
-                                            <img src="../../assets/images/demo/creative.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/creative.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Creative</h5>
@@ -205,7 +205,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme07" name="data-theme" type="radio" value="minimal" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme07">
-                                            <img src="../../assets/images/demo/minimal.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/minimal.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Minimal</h5>
@@ -214,7 +214,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme08" name="data-theme" type="radio" value="modern" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme08">
-                                            <img src="../../assets/images/demo/modern.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/modern.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Modern</h5>
@@ -224,7 +224,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme09" name="data-theme" type="radio" value="interactive" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme09">
-                                            <img src="../../assets/images/demo/interactive.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/interactive.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Interactive</h5>
@@ -234,7 +234,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme10" name="data-theme" type="radio" value="classic" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme10">
-                                            <img src="../../assets/images/demo/classic.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/classic.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Classic</h5>
@@ -244,7 +244,7 @@ export default function
                                     <div className="form-check card-radio">
                                         <input id="customizer-theme11" name="data-theme" type="radio" value="vintage" className="form-check-input" />
                                         <label className="form-check-label p-0" htmlFor="customizer-theme11">
-                                            <img src="../../assets/images/demo/vintage.png" alt="" className="img-fluid" />
+                                            <img src="/assets/images/demos/vintage.png" alt="" className="img-fluid" />
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center fw-medium mt-2">Vintage</h5>

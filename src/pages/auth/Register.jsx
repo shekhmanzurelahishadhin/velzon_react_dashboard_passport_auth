@@ -73,6 +73,17 @@ export default function
                                                     </div>
                                                 </div>
 
+
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="confirm-password-input">Confirm Password</label>
+                                                    <div class="position-relative auth-pass-inputgroup">
+                                                        <input type="password" class="form-control pe-5 confirm-password-input" onpaste="return false" placeholder="Enter confirm password" id="confirm-password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+                                                            <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon-confirm"><i class="ri-eye-fill align-middle"></i></button>
+                                                            <div class="invalid-feedback">
+                                                                Please enter confirm password
+                                                            </div>
+                                                    </div>
+                                                </div>
                                                 <div class="mb-4">
                                                     <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the Velzon <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
                                                 </div>

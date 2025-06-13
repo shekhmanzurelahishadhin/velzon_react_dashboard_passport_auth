@@ -1,1 +1,17 @@
-Array.from(document.querySelectorAll("form .auth-pass-inputgroup")).forEach(function(e){Array.from(e.querySelectorAll(".password-addon")).forEach(function(r){r.addEventListener("click",function(r){var o=e.querySelector(".password-input");"password"===o.type?o.type="text":o.type="password"})})});
+Array.from(document.querySelectorAll("form .auth-pass-inputgroup")).forEach(function (group) {
+  const button = group.querySelector(".password-addon");
+  const input = group.querySelector("input");
+
+  if (button && input) {
+    button.addEventListener("click", function () {
+      input.type = input.type === "password" ? "text" : "password";
+
+      // Optional: toggle icon
+      const icon = button.querySelector("i");
+      if (icon) {
+        icon.classList.toggle("ri-eye-fill");
+        icon.classList.toggle("ri-eye-off-fill");
+      }
+    });
+  }
+});
