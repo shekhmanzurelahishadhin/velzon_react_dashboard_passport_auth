@@ -11,6 +11,7 @@ import ResetPassword from './pages/auth/ResetPassword';
 import React, { useEffect } from "react";
 import PrivateRoute from './auth/PrivateRoute';
 import GuestRoute from './auth/GuestRoute';
+import Test from './pages/Test';
 function App() {
 
 
@@ -20,6 +21,12 @@ function App() {
         <Route index element={
           <PrivateRoute>
             <Dashboard />
+          </PrivateRoute>
+        }
+        />
+        <Route path='test' element={
+          <PrivateRoute>
+            <Test />
           </PrivateRoute>
         }
         />
@@ -37,9 +44,9 @@ function App() {
           </GuestRoute>
         } />
         <Route path='reset-password' element={<ResetPassword />} />
-    
+
       </Route>
-          <Route path='*' element={<NotFound />} />
+      <Route path='*' element={<NotFound />} />
 
     </Routes>
   );

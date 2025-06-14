@@ -137,11 +137,11 @@ export default function
                                 </div>
 
                             </div>
-
+{/* 
                             <div className="form-check form-switch form-switch-md mb-3 mt-4">
                                 <input type="checkbox" className="form-check-input" id="sidebarUserProfile" />
                                 <label className="form-check-label" htmlFor="sidebarUserProfile">Sidebar User Profile Avatar</label>
-                            </div>
+                            </div> */}
 
                             <h6 className="mt-4 mb-0 fw-semibold text-uppercase">Theme</h6>
                             <p className="text-muted">Choose your suitable Theme.</p>

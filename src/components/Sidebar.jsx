@@ -3,19 +3,18 @@ import { Link, NavLink } from 'react-router-dom'
 import useAuth from '../auth/useAuth';
 
 export default function Sidebar() {
-    const { user, logout } = useAuth();
-    const handleLogout = (e) => {
-        console.log('hhh')
-        e.preventDefault();
-        logout();
-    };
+    const {user, logout} = useAuth();
+     const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+  };
     return (
         <div>
             <div className="app-menu navbar-menu">
 
                 <div className="navbar-brand-box">
 
-                    <NavLink to="#" className="logo logo-dark">
+                    <NavLink to="/" className="logo logo-dark">
                         <span className="logo-sm">
                             <img src="assets/images/logo-sm.png" alt="" height="22" />
                         </span>
@@ -24,7 +23,7 @@ export default function Sidebar() {
                         </span>
                     </NavLink>
 
-                    <NavLink to="#" className="logo logo-light">
+                    <NavLink to="/" className="logo logo-light">
                         <span className="logo-sm">
                             <img src="assets/images/logo-sm.png" alt="" height="22" />
                         </span>
@@ -58,16 +57,7 @@ export default function Sidebar() {
                         <NavLink className="dropdown-item" to="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></NavLink>
                         <NavLink className="dropdown-item" to="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></NavLink>
                         <NavLink className="dropdown-item" to="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></NavLink>
-                        <a
-                            href="#"
-                            className="dropdown-item"
-                            data-no-intercept
-                            onClick={handleLogout}
-                        >
-                            <i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
-                            <span className="align-middle" data-key="t-logout">Logout</span>
-                        </a>
-
+                        <NavLink className="dropdown-item" to="" onClick={handleLogout}><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></NavLink>
                     </div>
                 </div>
                 <div id="scrollbar" className='h-100 simplebar-scrollable-y'>
@@ -1130,7 +1120,7 @@ export default function Sidebar() {
 
                 <div className="sidebar-background"></div>
             </div>
-
+        
             <div className="vertical-overlay"></div>
         </div>
     )
