@@ -1,6 +1,12 @@
 import React from 'react'
+import useAuth from '../auth/useAuth'
 
 export default function Header() {
+    const {user, logout} = useAuth();
+     const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+  };
   return (
      <>
              <header id="page-topbar">
@@ -687,14 +693,14 @@ export default function Header() {
                         <span className="d-flex align-items-center">
                             <img className="rounded-circle header-profile-user" src="/assets/images/users/avatar-1.jpg" alt="Header Avatar"/>
                             <span className="text-start ms-xl-2">
-                                <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{user ? user?.name : ''}</span>
                                 <span className="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
                             </span>
                         </span>
                     </button>
                     <div className="dropdown-menu dropdown-menu-end">
             
-                        <h6 className="dropdown-header">Welcome Anna!</h6>
+                        <h6 className="dropdown-header">Welcome {user ? user?.name : ''}!</h6>
                         <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></a>
                         <a className="dropdown-item" href="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></a>
                         <a className="dropdown-item" href="apps-tasks-kanban.html"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></a>
@@ -703,7 +709,7 @@ export default function Header() {
                         <a className="dropdown-item" href="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></a>
                         <a className="dropdown-item" href="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></a>
                         <a className="dropdown-item" href="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></a>
-                        <a className="dropdown-item" href="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
+                        <a className="dropdown-item" href="" onClick={handleLogout}><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></a>
                     </div>
                 </div>
             </div>

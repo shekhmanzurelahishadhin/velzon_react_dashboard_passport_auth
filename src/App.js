@@ -9,20 +9,37 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import ResetPassword from './pages/auth/ResetPassword';
 import React, { useEffect } from "react";
+import PrivateRoute from './auth/PrivateRoute';
+import GuestRoute from './auth/GuestRoute';
 function App() {
 
 
   return (
     <Routes>
       <Route path='/' element={<MainLayout />}>
-        <Route index element={<Dashboard />} />
+        <Route index element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+        />
       </Route>
       <Route path='/auth' element={<AuthLayout />}>
-        <Route path='login' element={<Login />} />
-        <Route path='register' element={<Register />} />
+        <Route path='login' element={
+          <GuestRoute>
+            <Login />
+          </GuestRoute>
+        }
+        />
+        <Route path='register' element={
+          <GuestRoute>
+            <Register />
+          </GuestRoute>
+        } />
         <Route path='reset-password' element={<ResetPassword />} />
-        <Route path='*' element={<NotFound />} />
+    
       </Route>
+          <Route path='*' element={<NotFound />} />
 
     </Routes>
   );

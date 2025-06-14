@@ -2,9 +2,10 @@ import React, {useEffect} from 'react'
 import LoadScript from '../components/LoadScript'
 import { Outlet, useLocation } from 'react-router-dom'
 import AuthScript from '../components/AuthScript';
+import useAuth from '../auth/useAuth';
 
 export default function AuthLayout() {
-    
+    const { user } = useAuth(); 
     useEffect(() => {
     document.documentElement.setAttribute("data-theme", "default");
     document.documentElement.setAttribute("data-sidebar", "dark");
@@ -14,7 +15,7 @@ export default function AuthLayout() {
 
     return (
         <div>
-            <AuthScript/>
+             {!user && <AuthScript/>}
             <Outlet/>
         </div>
     )

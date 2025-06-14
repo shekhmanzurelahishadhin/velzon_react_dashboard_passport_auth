@@ -1,37 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import api from '../../../src/api/axios';
 import { toast } from 'react-toastify';
+import useAuth from '../../auth/useAuth';
 
 export default function () {
     const [form, setForm] = useState({ email: '', password: '', message: '' });
     const [loading, setLoading] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [errors, setErrors] = useState({});
+    const { login } = useAuth()
+
 
     const updateField = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
+        // Clear error for that specific field
+        if (errors[e.target.name]) {
+            setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: null }));
+        }
     }
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        api.post('/login', form)
-            .then(function (response) {
-                console.log('Login successful:', response.data);
 
-                if (response.data.token) {
-                    localStorage.setItem('auth_token', response.data.token);
-                     toast.success('Login successful!');
-                }
-                setForm({ email: '', password: '', message: '' });
-            })
-            .catch(function (error) {
-                 toast.error('Login failed. Please check your credentials.');
-            })
-            .finally(function () {
-                setLoading(false);
-            });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login(form, setForm, setErrors, setLoading);
     };
+   
+
     return (
+
         <div>
             <div className="auth-page-wrapper pt-5">
 
@@ -77,7 +74,8 @@ export default function () {
 
                                                 <div className="mb-3">
                                                     <label htmlFor="email" className="form-label">Email</label>
-                                                    <input type="email" className="form-control" name='email' id="email" placeholder="Enter Email" value={form.email} onChange={updateField} />
+                                                    <input type="email" className={`form-control ${errors?.email ? 'is-invalid' : ''}`} name='email' id="email" placeholder="Enter Email" value={form.email} onChange={updateField} />
+                                                    {errors.email && <div className="invalid-feedback">{errors?.email[0]}</div>}
                                                 </div>
 
                                                 <div className="mb-3">
@@ -86,9 +84,10 @@ export default function () {
                                                     </div>
                                                     <label className="form-label" htmlFor="password-input">Password</label>
                                                     <div className="position-relative auth-pass-inputgroup mb-3">
-                                                        <input type="password" name='password' className="form-control pe-5 password-input" placeholder="Enter password" value={form.password} id="password-input" onChange={updateField} />
+                                                        <input type="password" name='password' className={`form-control pe-5 password-input ${errors?.password ? 'is-invalid' : ''}`} placeholder="Enter password" value={form.password} id="password-input" onChange={updateField} />
                                                         <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i className="ri-eye-fill align-middle"></i></button>
                                                     </div>
+                                                    {errors.password && <div className="invalid-feedback">{errors?.password[0]}</div>}
                                                 </div>
 
                                                 <div className="form-check">

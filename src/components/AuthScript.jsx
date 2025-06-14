@@ -11,6 +11,7 @@ export default function AuthScript() {
       "/assets/libs/feather-icons/feather.min.js",
       "/assets/js/pages/plugins/lord-icon-2.1.0.js",
       // "/assets/js/plugins.js",
+      //  "/assets/js/app.js",
       "/assets/libs/apexcharts/apexcharts.min.js",
       "/assets/libs/jsvectormap/js/jsvectormap.min.js",
       "/assets/libs/jsvectormap/maps/world-merc.js",
@@ -34,7 +35,7 @@ export default function AuthScript() {
       const existing = document.getElementById(id);
       if (existing) {
         existing.remove(); // Remove any existing script with the same ID
-        console.log("Removed existing script:", src);
+        
       }
 
       return new Promise((resolve) => {
@@ -45,7 +46,7 @@ export default function AuthScript() {
         script.onload = () => resolve();
         document.body.appendChild(script);
         loadedScripts.push(id); // Track the ID for cleanup
-        console.log("Loaded script:", src);
+        
       });
     }
 
@@ -60,7 +61,6 @@ export default function AuthScript() {
         const script = document.getElementById(id);
         if (script) {
           script.remove();
-          console.log("Cleaned up script:", script.src);
         }
       });
     };

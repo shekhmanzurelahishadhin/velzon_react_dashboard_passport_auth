@@ -1,13 +1,30 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Navigate, NavLink } from 'react-router-dom';
+import useAuth from '../../auth/useAuth';
 
-export default function
+export default function () {
+    const [form, setForm] = useState({ email: '', name: '', password: '', password_confirmation: '', message: '' });
+    const [loading, setLoading] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [errors, setErrors] = useState({});
+    const { register } = useAuth()
 
-    () {
+    const updateField = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+        // Clear error for that specific field
+        if (errors[e.target.name]) {
+            setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: null }));
+        }
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        register(form, setForm, setErrors, setLoading);
+    };
+ 
     return (
         <div>
             <div class="auth-page-wrapper pt-5">
-               
+
                 <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
                     <div class="bg-overlay"></div>
 
@@ -26,14 +43,14 @@ export default function
                                 <div class="text-center mt-sm-5 mb-4 text-white-50">
                                     <div>
                                         <a href="index.html" class="d-inline-block auth-logo">
-                                            <img src="assets/images/logo-light.png" alt="" height="20"/>
+                                            <img src="assets/images/logo-light.png" alt="" height="20" />
                                         </a>
                                     </div>
                                     <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
                                 </div>
                             </div>
                         </div>
-                        
+
 
                         <div class="row justify-content-center">
                             <div class="col-md-8 col-lg-6 col-xl-5">
@@ -45,31 +62,31 @@ export default function
                                             <p class="text-muted">Get your free velzon account now</p>
                                         </div>
                                         <div class="p-2 mt-4">
-                                            <form class="needs-validation" novalidate action="https://themesbrand.com/velzon/html/master/index.html">
+                                            <form class="needs-validation" onSubmit={handleSubmit}>
 
                                                 <div class="mb-3">
                                                     <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
-                                                    <input type="email" class="form-control" id="useremail" placeholder="Enter email address" required/>
-                                                        <div class="invalid-feedback">
-                                                            Please enter email
-                                                        </div>
+                                                    <input type="email" name='email' class={`form-control ${errors?.email ? 'is-invalid' : ''}`} id="useremail" placeholder="Enter email address" value={form.email} onChange={updateField} required />
+                                                    <div class="invalid-feedback">
+                                                        Please enter email
+                                                    </div>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="username" placeholder="Enter username" required/>
-                                                        <div class="invalid-feedback">
-                                                            Please enter username
-                                                        </div>
+                                                    <label for="name" class="form-label">Username <span class="text-danger">*</span></label>
+                                                    <input type="text" name='name' class={`form-control ${errors?.name ? 'is-invalid' : ''}`} id="name" placeholder="Enter username" value={form.name} onChange={updateField} required />
+                                                    <div class="invalid-feedback">
+                                                        Please enter username
+                                                    </div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="password-input">Password</label>
                                                     <div class="position-relative auth-pass-inputgroup">
-                                                        <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
-                                                            <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                                            <div class="invalid-feedback">
-                                                                Please enter password
-                                                            </div>
+                                                        <input type="password" name='password' class={`form-control pe-5 password-input ${errors?.password ? 'is-invalid' : ''}`} onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" value={form.password} onChange={updateField} required />
+                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                        <div class="invalid-feedback">
+                                                            Please enter password
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -77,11 +94,11 @@ export default function
                                                 <div class="mb-3">
                                                     <label class="form-label" for="confirm-password-input">Confirm Password</label>
                                                     <div class="position-relative auth-pass-inputgroup">
-                                                        <input type="password" class="form-control pe-5 confirm-password-input" onpaste="return false" placeholder="Enter confirm password" id="confirm-password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
-                                                            <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon-confirm"><i class="ri-eye-fill align-middle"></i></button>
-                                                            <div class="invalid-feedback">
-                                                                Please enter confirm password
-                                                            </div>
+                                                        <input type="password" name='password_confirmation' class={`form-control pe-5 confirm-password-input ${errors?.password_confirmation ? 'is-invalid' : ''}`} onpaste="return false" placeholder="Enter confirm password" id="confirm-password-input" aria-describedby="passwordInput" value={form.password_confirmation} onChange={updateField} required />
+                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon-confirm"><i class="ri-eye-fill align-middle"></i></button>
+                                                        <div class="invalid-feedback">
+                                                            Please enter confirm password
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-4">
@@ -97,7 +114,18 @@ export default function
                                                 </div>
 
                                                 <div class="mt-4">
-                                                    <button class="btn btn-success w-100" type="submit">Sign Up</button>
+                                                     <button className="btn btn-success w-100" type="submit" disabled={loading}>
+                                                        {!loading && <span>Sign Up</span>}
+                                                        {loading && (
+                                                            <div
+                                                                className="spinner-border text-light"
+                                                                role="status"
+                                                                style={{ width: '1rem', height: '1rem', verticalAlign: 'middle' }}
+                                                            >
+                                                                <span className="visually-hidden">Loading...</span>
+                                                            </div>
+                                                        )}
+                                                    </button>
                                                 </div>
 
                                                 <div class="mt-4 text-center">
@@ -116,9 +144,9 @@ export default function
 
                                         </div>
                                     </div>
-                                    
+
                                 </div>
-                               
+
 
                                 <div class="mt-4 text-center">
                                     <p class="mb-0">Already have an account ? <NavLink to="/auth/login" class="fw-semibold text-primary text-decoration-underline"> Signin </NavLink> </p>
@@ -126,11 +154,11 @@ export default function
 
                             </div>
                         </div>
-                        
+
                     </div>
-                   
+
                 </div>
-               
+
 
                 <footer class="footer">
                     <div class="container">
@@ -145,7 +173,7 @@ export default function
                         </div>
                     </div>
                 </footer>
-                
+
             </div>
         </div>
     )
