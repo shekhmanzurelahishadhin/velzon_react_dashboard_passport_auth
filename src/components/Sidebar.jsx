@@ -1,7 +1,14 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import useAuth from '../auth/useAuth';
 
 export default function Sidebar() {
+    const { user, logout } = useAuth();
+    const handleLogout = (e) => {
+        console.log('hhh')
+        e.preventDefault();
+        logout();
+    };
     return (
         <div>
             <div className="app-menu navbar-menu">
@@ -35,14 +42,14 @@ export default function Sidebar() {
                         <span className="d-flex align-items-center gap-2">
                             <img className="rounded header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar" />
                             <span className="text-start">
-                                <span className="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
+                                <span className="d-block fw-medium sidebar-user-name-text">{user ? user?.name : ''}</span>
                                 <span className="d-block fs-14 sidebar-user-name-sub-text"><i className="ri ri-circle-fill fs-10 text-success align-baseline"></i> <span className="align-middle">Online</span></span>
                             </span>
                         </span>
                     </button>
                     <div className="dropdown-menu dropdown-menu-end">
 
-                        <h6 className="dropdown-header">Welcome Anna!</h6>
+                        <h6 className="dropdown-header">Welcome {user ? user?.name : ''}!</h6>
                         <NavLink className="dropdown-item" to="pages-profile.html"><i className="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Profile</span></NavLink>
                         <NavLink className="dropdown-item" to="apps-chat.html"><i className="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Messages</span></NavLink>
                         <NavLink className="dropdown-item" to="apps-tasks-kanban.html"><i className="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Taskboard</span></NavLink>
@@ -51,7 +58,16 @@ export default function Sidebar() {
                         <NavLink className="dropdown-item" to="pages-profile.html"><i className="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Balance : <b>$5971.67</b></span></NavLink>
                         <NavLink className="dropdown-item" to="pages-profile-settings.html"><span className="badge bg-success-subtle text-success mt-1 float-end">New</span><i className="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Settings</span></NavLink>
                         <NavLink className="dropdown-item" to="auth-lockscreen-basic.html"><i className="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span className="align-middle">Lock screen</span></NavLink>
-                        <NavLink className="dropdown-item" to="auth-logout-basic.html"><i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span className="align-middle" data-key="t-logout">Logout</span></NavLink>
+                        <a
+                            href="#"
+                            className="dropdown-item"
+                            data-no-intercept
+                            onClick={handleLogout}
+                        >
+                            <i className="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                            <span className="align-middle" data-key="t-logout">Logout</span>
+                        </a>
+
                     </div>
                 </div>
                 <div id="scrollbar" className='h-100 simplebar-scrollable-y'>
@@ -1114,7 +1130,7 @@ export default function Sidebar() {
 
                 <div className="sidebar-background"></div>
             </div>
-        
+
             <div className="vertical-overlay"></div>
         </div>
     )

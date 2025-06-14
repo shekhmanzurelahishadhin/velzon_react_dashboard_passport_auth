@@ -23,12 +23,12 @@ export default function () {
  
     return (
         <div>
-            <div class="auth-page-wrapper pt-5">
+            <div className="auth-page-wrapper pt-5">
 
-                <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
-                    <div class="bg-overlay"></div>
+                <div className="auth-one-bg-position auth-one-bg" id="auth-particles">
+                    <div className="bg-overlay"></div>
 
-                    <div class="shape">
+                    <div className="shape">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1440 120">
                             <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
                         </svg>
@@ -36,84 +36,84 @@ export default function () {
                 </div>
 
 
-                <div class="auth-page-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="text-center mt-sm-5 mb-4 text-white-50">
+                <div className="auth-page-content">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="text-center mt-sm-5 mb-4 text-white-50">
                                     <div>
-                                        <a href="index.html" class="d-inline-block auth-logo">
+                                        <a href="index.html" className="d-inline-block auth-logo">
                                             <img src="assets/images/logo-light.png" alt="" height="20" />
                                         </a>
                                     </div>
-                                    <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
+                                    <p className="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="row justify-content-center">
-                            <div class="col-md-8 col-lg-6 col-xl-5">
-                                <div class="card mt-4 card-bg-fill">
+                        <div className="row justify-content-center">
+                            <div className="col-md-8 col-lg-6 col-xl-5">
+                                <div className="card mt-4 card-bg-fill">
 
-                                    <div class="card-body p-4">
-                                        <div class="text-center mt-2">
-                                            <h5 class="text-primary">Create New Account</h5>
-                                            <p class="text-muted">Get your free velzon account now</p>
+                                    <div className="card-body p-4">
+                                        <div className="text-center mt-2">
+                                            <h5 className="text-primary">Create New Account</h5>
+                                            <p className="text-muted">Get your free velzon account now</p>
                                         </div>
-                                        <div class="p-2 mt-4">
-                                            <form class="needs-validation" onSubmit={handleSubmit}>
+                                        <div className="p-2 mt-4">
+                                            <form className="needs-validation" onSubmit={handleSubmit}>
 
-                                                <div class="mb-3">
-                                                    <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
-                                                    <input type="email" name='email' class={`form-control ${errors?.email ? 'is-invalid' : ''}`} id="useremail" placeholder="Enter email address" value={form.email} onChange={updateField} required />
-                                                    <div class="invalid-feedback">
+                                                <div className="mb-3">
+                                                    <label for="useremail" className="form-label">Email <span className="text-danger">*</span></label>
+                                                    <input type="email" name='email' className={`form-control ${errors?.email ? 'is-invalid' : ''}`} id="useremail" placeholder="Enter email address" value={form.email} onChange={updateField} required />
+                                                    <div className="invalid-feedback">
                                                         Please enter email
                                                     </div>
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="name" class="form-label">Username <span class="text-danger">*</span></label>
-                                                    <input type="text" name='name' class={`form-control ${errors?.name ? 'is-invalid' : ''}`} id="name" placeholder="Enter username" value={form.name} onChange={updateField} required />
-                                                    <div class="invalid-feedback">
+                                                <div className="mb-3">
+                                                    <label for="name" className="form-label">Username <span className="text-danger">*</span></label>
+                                                    <input type="text" name='name' className={`form-control ${errors?.name ? 'is-invalid' : ''}`} id="name" placeholder="Enter username" value={form.name} onChange={updateField} required />
+                                                    <div className="invalid-feedback">
                                                         Please enter username
                                                     </div>
                                                 </div>
 
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="password-input">Password</label>
-                                                    <div class="position-relative auth-pass-inputgroup">
-                                                        <input type="password" name='password' class={`form-control pe-5 password-input ${errors?.password ? 'is-invalid' : ''}`} onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" value={form.password} onChange={updateField} required />
-                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
-                                                        <div class="invalid-feedback">
+                                                <div className="mb-3">
+                                                    <label className="form-label" for="password-input">Password</label>
+                                                    <div className="position-relative auth-pass-inputgroup">
+                                                        <input type="password" name='password' className={`form-control pe-5 password-input ${errors?.password ? 'is-invalid' : ''}`} onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" value={form.password} onChange={updateField} required />
+                                                        <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon"><i className="ri-eye-fill align-middle"></i></button>
+                                                        <div className="invalid-feedback">
                                                             Please enter password
                                                         </div>
                                                     </div>
                                                 </div>
 
 
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="confirm-password-input">Confirm Password</label>
-                                                    <div class="position-relative auth-pass-inputgroup">
-                                                        <input type="password" name='password_confirmation' class={`form-control pe-5 confirm-password-input ${errors?.password_confirmation ? 'is-invalid' : ''}`} onpaste="return false" placeholder="Enter confirm password" id="confirm-password-input" aria-describedby="passwordInput" value={form.password_confirmation} onChange={updateField} required />
-                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon-confirm"><i class="ri-eye-fill align-middle"></i></button>
-                                                        <div class="invalid-feedback">
+                                                <div className="mb-3">
+                                                    <label className="form-label" for="confirm-password-input">Confirm Password</label>
+                                                    <div className="position-relative auth-pass-inputgroup">
+                                                        <input type="password" name='password_confirmation' className={`form-control pe-5 confirm-password-input ${errors?.password_confirmation ? 'is-invalid' : ''}`} onpaste="return false" placeholder="Enter confirm password" id="confirm-password-input" aria-describedby="passwordInput" value={form.password_confirmation} onChange={updateField} required />
+                                                        <button className="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none" type="button" id="password-addon-confirm"><i className="ri-eye-fill align-middle"></i></button>
+                                                        <div className="invalid-feedback">
                                                             Please enter confirm password
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="mb-4">
-                                                    <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the Velzon <a href="#" class="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
+                                                <div className="mb-4">
+                                                    <p className="mb-0 fs-12 text-muted fst-italic">By registering you agree to the Velzon <a href="#" className="text-primary text-decoration-underline fst-normal fw-medium">Terms of Use</a></p>
                                                 </div>
 
-                                                <div id="password-contain" class="p-3 bg-light mb-2 rounded">
-                                                    <h5 class="fs-13">Password must contain:</h5>
-                                                    <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                                                    <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                                                    <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                                                    <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                                                <div id="password-contain" className="p-3 bg-light mb-2 rounded">
+                                                    <h5 className="fs-13">Password must contain:</h5>
+                                                    <p id="pass-length" className="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
+                                                    <p id="pass-lower" className="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
+                                                    <p id="pass-upper" className="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
+                                                    <p id="pass-number" className="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
                                                 </div>
 
-                                                <div class="mt-4">
+                                                <div className="mt-4">
                                                      <button className="btn btn-success w-100" type="submit" disabled={loading}>
                                                         {!loading && <span>Sign Up</span>}
                                                         {loading && (
@@ -128,16 +128,16 @@ export default function () {
                                                     </button>
                                                 </div>
 
-                                                <div class="mt-4 text-center">
-                                                    <div class="signin-other-title">
-                                                        <h5 class="fs-13 mb-4 title text-muted">Create account with</h5>
+                                                <div className="mt-4 text-center">
+                                                    <div className="signin-other-title">
+                                                        <h5 className="fs-13 mb-4 title text-muted">Create account with</h5>
                                                     </div>
 
                                                     <div>
-                                                        <button type="button" class="btn btn-primary btn-icon waves-effect m-1 waves-light"><i class="ri-facebook-fill fs-16"></i></button>
-                                                        <button type="button" class="btn btn-danger btn-icon waves-effect m-1 waves-light"><i class="ri-google-fill fs-16"></i></button>
-                                                        <button type="button" class="btn btn-dark btn-icon waves-effect m-1 waves-light"><i class="ri-github-fill fs-16"></i></button>
-                                                        <button type="button" class="btn btn-info btn-icon waves-effect m-1 waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                                        <button type="button" className="btn btn-primary btn-icon waves-effect m-1 waves-light"><i className="ri-facebook-fill fs-16"></i></button>
+                                                        <button type="button" className="btn btn-danger btn-icon waves-effect m-1 waves-light"><i className="ri-google-fill fs-16"></i></button>
+                                                        <button type="button" className="btn btn-dark btn-icon waves-effect m-1 waves-light"><i className="ri-github-fill fs-16"></i></button>
+                                                        <button type="button" className="btn btn-info btn-icon waves-effect m-1 waves-light"><i className="ri-twitter-fill fs-16"></i></button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -148,8 +148,8 @@ export default function () {
                                 </div>
 
 
-                                <div class="mt-4 text-center">
-                                    <p class="mb-0">Already have an account ? <NavLink to="/auth/login" class="fw-semibold text-primary text-decoration-underline"> Signin </NavLink> </p>
+                                <div className="mt-4 text-center">
+                                    <p className="mb-0">Already have an account ? <NavLink to="/auth/login" className="fw-semibold text-primary text-decoration-underline"> Signin </NavLink> </p>
                                 </div>
 
                             </div>
@@ -160,13 +160,13 @@ export default function () {
                 </div>
 
 
-                <footer class="footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <p class="mb-0 text-muted">&copy;
-                                        <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                <footer className="footer">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="text-center">
+                                    <p className="mb-0 text-muted">&copy;
+                                        <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand
                                     </p>
                                 </div>
                             </div>
