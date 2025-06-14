@@ -22,6 +22,7 @@ export default function LoadScript() {
       "/assets/js/app.js",
     
       "/assets/js/pages/password-addon.init.js",
+      "/assets/libs/prismjs/prism.js",
       "/assets/js/pages/form-validation.init.js",
     ];
 

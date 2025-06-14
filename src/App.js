@@ -12,7 +12,9 @@ import React, { useEffect } from "react";
 import PrivateRoute from './auth/PrivateRoute';
 import GuestRoute from './auth/GuestRoute';
 import Test from './pages/Test';
+import useRightSideResponsive from './hooks/useRightSideResponsive';
 function App() {
+  useRightSideResponsive();
 
 
   return (

@@ -77,7 +77,7 @@ export default function
                                     </div>
                                     <h5 className="fs-13 text-center mt-2">Horizontal</h5>
                                 </div>
-                                <div className="col-4">
+                                {/* <div className="col-4">
                                     <div className="form-check card-radio">
                                         <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" className="form-check-input" />
                                         <label className="form-check-label p-0 avatar-md w-100 material-shadow" htmlFor="customizer-layout03">
@@ -108,7 +108,7 @@ export default function
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center mt-2">Two Column</h5>
-                                </div>
+                                </div> */}
 
 
                                 <div className="col-4">
@@ -137,8 +137,8 @@ export default function
                                 </div>
 
                             </div>
-{/* 
-                            <div className="form-check form-switch form-switch-md mb-3 mt-4">
+
+                            {/* <div className="form-check form-switch form-switch-md mb-3 mt-4">
                                 <input type="checkbox" className="form-check-input" id="sidebarUserProfile" />
                                 <label className="form-check-label" htmlFor="sidebarUserProfile">Sidebar User Profile Avatar</label>
                             </div> */}
