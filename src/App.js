@@ -13,6 +13,7 @@ import PrivateRoute from './auth/PrivateRoute';
 import GuestRoute from './auth/GuestRoute';
 import Test from './pages/Test';
 import useRightSideResponsive from './hooks/useRightSideResponsive';
+import ProjectCategoryPage from './pages/softConfig/projectCategory/ProjectCategoryPage';
 function App() {
   useRightSideResponsive();
 
@@ -26,9 +27,15 @@ function App() {
           </PrivateRoute>
         }
         />
-        <Route path='test' element={
+        {/* <Route path='test' element={
           <PrivateRoute>
             <Test />
+          </PrivateRoute>
+        }
+        /> */}
+         <Route path='project-categories' element={
+          <PrivateRoute>
+            <ProjectCategoryPage />
           </PrivateRoute>
         }
         />

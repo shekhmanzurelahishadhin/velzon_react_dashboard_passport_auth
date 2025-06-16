@@ -69,11 +69,26 @@ export default function Sidebar() {
                         <ul className="navbar-nav" id="navbar-nav">
                             <li className="menu-title"><span data-key="t-menu">Menu</span></li>
                             <li className="nav-item">
-                                <a className="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                                    <i className="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
+                                <a className="nav-link menu-link" href="#sidebarSoftConfig" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSoftConfig">
+                                    <i className="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Soft Configure</span>
                                 </a>
-                                <div className="collapse menu-dropdown" id="sidebarDashboards">
+                                <div className="collapse menu-dropdown" id="sidebarSoftConfig">
                                     <ul className="nav nav-sm flex-column">
+                                           <li className="nav-item">
+                                            <a href="#sidebarProjects" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects" data-key="t-calender">
+                                                Products
+                                            </a>
+                                            <div className="collapse menu-dropdown" id="sidebarProjects">
+                                                <ul className="nav nav-sm flex-column">
+                                                    <li className="nav-item">
+                                                        <NavLink to="/project-categories" className="nav-link" data-key="t-main-calender"> Project Category </NavLink>
+                                                    </li>
+                                                    <li className="nav-item">
+                                                        <NavLink to="apps-calendar-month-grid.html" className="nav-link" data-key="t-month-grid"> Month Grid </NavLink>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
                                         <li className="nav-item">
                                             <NavLink to="/test" className="nav-link" data-key="t-analytics"> Analytics </NavLink>
                                         </li>
@@ -104,21 +119,6 @@ export default function Sidebar() {
                                 </a>
                                 <div className="collapse menu-dropdown" id="sidebarApps">
                                     <ul className="nav nav-sm flex-column">
-                                        <li className="nav-item">
-                                            <a href="#sidebarCalendar" className="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCalendar" data-key="t-calender">
-                                                Calendar
-                                            </a>
-                                            <div className="collapse menu-dropdown" id="sidebarCalendar">
-                                                <ul className="nav nav-sm flex-column">
-                                                    <li className="nav-item">
-                                                        <NavLink to="apps-calendar.html" className="nav-link" data-key="t-main-calender"> Main Calender </NavLink>
-                                                    </li>
-                                                    <li className="nav-item">
-                                                        <NavLink to="apps-calendar-month-grid.html" className="nav-link" data-key="t-month-grid"> Month Grid </NavLink>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
                                         <li className="nav-item">
                                             <NavLink to="apps-chat.html" className="nav-link" data-key="t-chat"> Chat </NavLink>
                                         </li>
