@@ -1,31 +1,45 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
+import api from '../../../api/axios';
 // import './ProjectCategoryTable.css'; // Import custom CSS
 
-const sampleData = [
-    { id: 1, name: 'Frontend', description: 'UI components' },
-    { id: 2, name: 'Backend', description: 'API and logic' },
-    { id: 3, name: 'Database', description: 'Data storage' },
-    { id: 4, name: 'DevOps', description: 'Deployment and CI/CD' },
-    { id: 5, name: 'QA', description: 'Testing and quality' },
-];
 
 export default function ProjectCategoryTable() {
     const [filterName, setFilterName] = useState('');
     const [filterDesc, setFilterDesc] = useState('');
     const [globalSearch, setGlobalSearch] = useState('');
+    const [projectCategories, setProjectCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const token = localStorage.getItem('auth_token');
+        if (token) {
+            api.get('/project-categories')
+                .then((res) => {
+                    console.log(res.data);
+                    setProjectCategories(res.data);
+                })
+                .catch((error) => {
+                    console.error('Failed to load project categories:', error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        } else {
+            setLoading(false);
+        }
+    }, []);
+
 
     const filteredData = useMemo(() => {
-        return sampleData.filter(item =>
+        return projectCategories.filter(item =>
             item.name.toLowerCase().includes(filterName.toLowerCase()) &&
-            item.description.toLowerCase().includes(filterDesc.toLowerCase()) &&
             (
                 item.name.toLowerCase().includes(globalSearch.toLowerCase()) ||
-                item.description.toLowerCase().includes(globalSearch.toLowerCase()) ||
                 String(item.id).includes(globalSearch)
             )
         );
-    }, [filterName, filterDesc, globalSearch]);
+    }, [projectCategories, filterName, globalSearch]);
 
     const handleEdit = (row) => alert(`Edit: ${row.name}`);
     const handleDelete = (row) => alert(`Delete: ${row.name}`);
@@ -34,7 +48,7 @@ export default function ProjectCategoryTable() {
         {
             name: 'ID',
             selector: row => row.id,
-            width: '70px',
+            width: '100px',
             sortable: true,
         },
         {
@@ -59,30 +73,6 @@ export default function ProjectCategoryTable() {
                 </div>
             ),
             selector: row => row.name,
-            sortable: true,
-        },
-        {
-            name: (
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span>Description</span>
-                    </div>
-                    <div
-                        onClick={(e) => e.stopPropagation()}
-                        onMouseDown={(e) => e.stopPropagation()}
-                    >
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            className='form-controll'
-                            value={filterDesc}
-                            onChange={(e) => setFilterDesc(e.target.value)}
-                            style={{ width: '100%', marginTop: '5px' }}
-                        />
-                    </div>
-                </div>
-            ),
-            selector: row => row.description,
             sortable: true,
         }
         ,
@@ -128,6 +118,12 @@ export default function ProjectCategoryTable() {
                     style={{ padding: '3px 5px', fontSize: '14px' }}
                 />
             </div>
+                {loading ? (
+            <div className="text-center">
+                <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                Loading project categories...
+            </div>
+        ) : (
             <DataTable
                 columns={columns}
                 data={filteredData}
@@ -136,7 +132,10 @@ export default function ProjectCategoryTable() {
                 paginationRowsPerPageOptions={[2, 5, 10]}
                 highlightOnHover
                 responsive
+                striped
+                persistTableHead
             />
+        )}
         </div>
     );
 }
