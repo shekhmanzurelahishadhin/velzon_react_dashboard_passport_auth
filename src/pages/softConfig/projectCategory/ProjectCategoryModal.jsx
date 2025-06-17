@@ -1,4 +1,5 @@
 import React from 'react'
+import ProjectCategoryForm from './ProjectCategoryForm'
 
 export default function ProjectCategoryModal() {
     return (
@@ -11,15 +12,7 @@ export default function ProjectCategoryModal() {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <div>
-                                        <label htmlFor="basiInput" className="form-label">Category Name  <span
-                                                style={{color: "red"}}>*</span></label>
-                                        <input type="password" className="form-control" id="basiInput" />
-                                    </div>
-                                </div>
-                            </div>
+                            <ProjectCategoryForm />
                         </div>
                         <div className="modal-footer">
                              <button type="button" className="btn btn-light" data-bs-dismiss="modal">Close</button>
