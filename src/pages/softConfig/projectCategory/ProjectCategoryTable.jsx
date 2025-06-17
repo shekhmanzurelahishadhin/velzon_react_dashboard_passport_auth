@@ -1,0 +1,141 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import DataTable from 'react-data-table-component';
+import api from '../../../api/axios';
+// import './ProjectCategoryTable.css'; // Import custom CSS
+
+
+export default function ProjectCategoryTable() {
+    const [filterName, setFilterName] = useState('');
+    const [filterDesc, setFilterDesc] = useState('');
+    const [globalSearch, setGlobalSearch] = useState('');
+    const [projectCategories, setProjectCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const token = localStorage.getItem('auth_token');
+        if (token) {
+            api.get('/project-categories')
+                .then((res) => {
+                    console.log(res.data);
+                    setProjectCategories(res.data);
+                })
+                .catch((error) => {
+                    console.error('Failed to load project categories:', error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        } else {
+            setLoading(false);
+        }
+    }, []);
+
+
+    const filteredData = useMemo(() => {
+        return projectCategories.filter(item =>
+            item.name.toLowerCase().includes(filterName.toLowerCase()) &&
+            (
+                item.name.toLowerCase().includes(globalSearch.toLowerCase()) ||
+                String(item.id).includes(globalSearch)
+            )
+        );
+    }, [projectCategories, filterName, globalSearch]);
+
+    const handleEdit = (row) => alert(`Edit: ${row.name}`);
+    const handleDelete = (row) => alert(`Delete: ${row.name}`);
+
+    const columns = [
+        {
+            name: 'ID',
+            selector: row => row.id,
+            width: '100px',
+            sortable: true,
+        },
+        {
+            name: (
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span>Name</span>
+                    </div>
+                    <div
+                        onClick={(e) => e.stopPropagation()}
+                        onMouseDown={(e) => e.stopPropagation()}
+                    >
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            value={filterName}
+                            className='form-controll'
+                            onChange={(e) => setFilterName(e.target.value)}
+                            style={{ width: '100%', marginTop: '5px' }}
+                        />
+                    </div>
+                </div>
+            ),
+            selector: row => row.name,
+            sortable: true,
+        }
+        ,
+        {
+            name: 'Actions',
+            cell: row => (
+                <div style={{ display: 'flex', gap: '5px' }}>
+                    <button
+                        type="button"
+                        className="btn btn-primary btn-sm"
+                        onClick={() => handleEdit(row)}
+                        title="Edit"
+                    >
+                        <i className="ri-pencil-line"></i>
+                    </button>
+
+                    <button
+                        type="button"
+                        className="btn btn-danger btn-sm"
+                        onClick={() => handleDelete(row)}
+                        title="Delete"
+                    >
+                        <i className="ri-delete-bin-line"></i>
+                    </button>
+                </div>
+            ),
+            ignoreRowClick: true,
+            allowOverflow: true,
+            button: true,
+        },
+    ];
+
+
+    return (
+        <div style={{ padding: 10 }}>
+            <div className="col-6 col-md-2 mb-3">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    value={globalSearch}
+                    onChange={(e) => setGlobalSearch(e.target.value)}
+                    className="form-control"
+                    style={{ padding: '3px 5px', fontSize: '14px' }}
+                />
+            </div>
+                {loading ? (
+            <div className="text-center">
+                <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                Loading project categories...
+            </div>
+        ) : (
+            <DataTable
+                columns={columns}
+                data={filteredData}
+                pagination
+                paginationPerPage={2}
+                paginationRowsPerPageOptions={[2, 5, 10]}
+                highlightOnHover
+                responsive
+                striped
+                persistTableHead
+            />
+        )}
+        </div>
+    );
+}
