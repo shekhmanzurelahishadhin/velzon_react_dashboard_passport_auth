@@ -60,7 +60,7 @@ export default function
                                     </div>
                                     <h5 className="fs-13 text-center mt-2">Vertical</h5>
                                 </div>
-                                <div className="col-4">
+                                {/* <div className="col-4">
                                     <div className="form-check card-radio">
                                         <input id="customizer-layout02" name="data-layout" type="radio" value="horizontal" className="form-check-input" />
                                         <label className="form-check-label p-0 avatar-md w-100 material-shadow" htmlFor="customizer-layout02">
@@ -76,7 +76,7 @@ export default function
                                         </label>
                                     </div>
                                     <h5 className="fs-13 text-center mt-2">Horizontal</h5>
-                                </div>
+                                </div> */}
                                 {/* <div className="col-4">
                                     <div className="form-check card-radio">
                                         <input id="customizer-layout03" name="data-layout" type="radio" value="twocolumn" className="form-check-input" />
