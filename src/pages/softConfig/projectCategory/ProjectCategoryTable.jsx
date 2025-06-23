@@ -1,45 +1,20 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
-import api from '../../../api/axios';
-// import './ProjectCategoryTable.css'; // Import custom CSS
 
 
-export default function ProjectCategoryTable() {
+export default function ProjectCategoryTable({ data, loading, onRefresh }) {
     const [filterName, setFilterName] = useState('');
-    const [filterDesc, setFilterDesc] = useState('');
     const [globalSearch, setGlobalSearch] = useState('');
-    const [projectCategories, setProjectCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const token = localStorage.getItem('auth_token');
-        if (token) {
-            api.get('/project-categories')
-                .then((res) => {
-                    console.log(res.data);
-                    setProjectCategories(res.data);
-                })
-                .catch((error) => {
-                    console.error('Failed to load project categories:', error);
-                })
-                .finally(() => {
-                    setLoading(false);
-                });
-        } else {
-            setLoading(false);
-        }
-    }, []);
-
 
     const filteredData = useMemo(() => {
-        return projectCategories.filter(item =>
+        return data.filter(item =>
             item.name.toLowerCase().includes(filterName.toLowerCase()) &&
             (
                 item.name.toLowerCase().includes(globalSearch.toLowerCase()) ||
                 String(item.id).includes(globalSearch)
             )
         );
-    }, [projectCategories, filterName, globalSearch]);
+    }, [data, filterName, globalSearch]);
 
     const handleEdit = (row) => alert(`Edit: ${row.name}`);
     const handleDelete = (row) => alert(`Delete: ${row.name}`);
