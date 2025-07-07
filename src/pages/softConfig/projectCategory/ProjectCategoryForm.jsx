@@ -19,7 +19,7 @@ export default function ProjectCategoryForm({ onCreated }) {
     try {
       setLoading(true);
       const response = await api.post('/project-categories', data);
-      toast.success('Project Category created!');
+      toast.success('Category created Succesfully!');
       reset();
       setLoading(false);
       if (onCreated) onCreated();

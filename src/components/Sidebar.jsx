@@ -81,7 +81,7 @@ export default function Sidebar() {
                                             <div className="collapse menu-dropdown" id="sidebarProjects">
                                                 <ul className="nav nav-sm flex-column">
                                                     <li className="nav-item">
-                                                        <NavLink to="/project-categories" className="nav-link" data-key="t-main-calender"> Project Category </NavLink>
+                                                        <NavLink to="/categories" className="nav-link" data-key="t-main-calender"> Category </NavLink>
                                                     </li>
                                                     <li className="nav-item">
                                                         <NavLink to="apps-calendar-month-grid.html" className="nav-link" data-key="t-month-grid"> Month Grid </NavLink>

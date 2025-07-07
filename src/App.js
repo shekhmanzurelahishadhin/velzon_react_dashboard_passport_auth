@@ -33,7 +33,7 @@ function App() {
           </PrivateRoute>
         }
         /> */}
-         <Route path='project-categories' element={
+         <Route path='categories' element={
           <PrivateRoute>
             <ProjectCategoryPage />
           </PrivateRoute>

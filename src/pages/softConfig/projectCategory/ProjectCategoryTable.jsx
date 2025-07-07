@@ -103,7 +103,7 @@ export default function ProjectCategoryTable({ data, loading, onRefresh }) {
                 columns={columns}
                 data={filteredData}
                 pagination
-                paginationPerPage={2}
+                paginationPerPage={10}
                 paginationRowsPerPageOptions={[2, 5, 10]}
                 highlightOnHover
                 responsive
