@@ -30,6 +30,7 @@ document.documentElement.setAttribute("data-sidebar-size", "lg");
 
                 <div className="page-content">
                     <div className="container-fluid">
+                        
                         <Outlet />
                     </div>
                 </div>
