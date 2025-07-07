@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import DataTable from 'react-data-table-component';
+import api from '../../../api/axios';
+import { toast } from 'react-toastify';
 
 
 export default function ProjectCategoryTable({ data, loading, onRefresh }) {
     const [filterName, setFilterName] = useState('');
     const [globalSearch, setGlobalSearch] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+
 
     const filteredData = useMemo(() => {
         return data.filter(item =>
@@ -17,7 +21,27 @@ export default function ProjectCategoryTable({ data, loading, onRefresh }) {
     }, [data, filterName, globalSearch]);
 
     const handleEdit = (row) => alert(`Edit: ${row.name}`);
-    const handleDelete = (row) => alert(`Delete: ${row.name}`);
+    const handleDelete = async (row) => {
+        const confirmDelete = window.confirm(`Are you sure you want to delete "${row.name}"?`);
+        if (!confirmDelete) return;
+
+        try {
+            setIsDeleting(true);
+            await api.delete(`/project-categories/${row.id}`);
+            toast.success('Category deleted successfully!');
+            if (onRefresh) onRefresh();
+        } catch (err) {
+            if (err.response?.status === 403 || err.response?.status === 404) {
+                toast.error('Delete failed: ' + err.response.data.message);
+            } else {
+                console.error("Unexpected error:", err);
+                toast.error('An unexpected error occurred!');
+            }
+        } finally {
+            setIsDeleting(false);
+        }
+    };
+
 
     const columns = [
         {
@@ -69,9 +93,11 @@ export default function ProjectCategoryTable({ data, loading, onRefresh }) {
                         className="btn btn-danger btn-sm"
                         onClick={() => handleDelete(row)}
                         title="Delete"
+                        disabled={isDeleting}
                     >
                         <i className="ri-delete-bin-line"></i>
                     </button>
+
                 </div>
             ),
             ignoreRowClick: true,
@@ -93,24 +119,24 @@ export default function ProjectCategoryTable({ data, loading, onRefresh }) {
                     style={{ padding: '3px 5px', fontSize: '14px' }}
                 />
             </div>
-                {loading ? (
-            <div className="text-center">
-                <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                Loading project categories...
-            </div>
-        ) : (
-            <DataTable
-                columns={columns}
-                data={filteredData}
-                pagination
-                paginationPerPage={10}
-                paginationRowsPerPageOptions={[2, 5, 10]}
-                highlightOnHover
-                responsive
-                striped
-                persistTableHead
-            />
-        )}
+            {loading ? (
+                <div className="text-center">
+                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Loading project categories...
+                </div>
+            ) : (
+                <DataTable
+                    columns={columns}
+                    data={filteredData}
+                    pagination
+                    paginationPerPage={10}
+                    paginationRowsPerPageOptions={[2, 5, 10]}
+                    highlightOnHover
+                    responsive
+                    striped
+                    persistTableHead
+                />
+            )}
         </div>
     );
 }
