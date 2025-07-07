@@ -15,7 +15,7 @@ export default function () {
 
     const updateField = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
-        // Clear error for that specific field .
+        // Clear error for that specific field.
         if (errors[e.target.name]) {
             setErrors((prevErrors) => ({ ...prevErrors, [e.target.name]: null }));
         }
